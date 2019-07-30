@@ -48,6 +48,8 @@ class Graph {
 
       //Djikstra
     shortestRoute(startNode, endNode) {
+    console.log("--Directions from " + startNode + " to " + endNode + "--\n");
+    var start=startNode;
     let times = {};
     let backtrace = {};
     let pq = new PriorityQueue();
@@ -72,11 +74,30 @@ class Graph {
   }
   let path = [endNode];
   let lastStep = endNode;
+  var change = [];
+  var count=0;
   while(lastStep !== startNode) {
+<<<<<<< Updated upstream
     path.unshift(backtrace[lastStep])
     lastStep = backtrace[lastStep]
   }
   console.log("Path is \n" + path + " and time is " + times[endNode]) +" minutes.";
+=======
+    if(this.getline(lastStep,backtrace[lastStep])!=this.getline(backtrace[lastStep],backtrace[backtrace[lastStep]]))
+      if(backtrace[lastStep]==startNode)
+        ;
+      else {
+        change[count] = "Change from " + this.getline(backtrace[lastStep],backtrace[backtrace[lastStep]]) + " to " + this.getline(lastStep,backtrace[lastStep])  + " at " + backtrace[lastStep];
+        count++;
+    }
+    path.unshift(backtrace[lastStep])
+    lastStep = backtrace[lastStep]
+  }
+  for(var i=count-1; i>=0; i--)
+   console.log(change[i]);
+  
+  console.log("\nComplete Route is \n" + path + " and time is " + times[endNode] +" minutes.");
+>>>>>>> Stashed changes
       }
 
 printGraph(sta) 
@@ -290,7 +311,12 @@ for(var i=0; i<(pinkbranchline.length-1); i++){
 
 
 //ShortestRouteCall
+<<<<<<< Updated upstream
 g.shortestRoute("Model Town", "Palam");
+=======
+//g.printline("Janakpuri West", "Janakpuri East");
+g.shortestRoute("Palam", "Durgabai Deshmukh South Campus");
+>>>>>>> Stashed changes
 
 //AdjList of Station
 //g.printGraph("Rajouri Garden");
@@ -311,3 +337,4 @@ g.shortestRoute("Model Town", "Palam");
 //Green
 //Green Branch
 //Pink
+//Pink Branch
