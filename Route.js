@@ -250,13 +250,49 @@ for(var i=0; i<(greenbranchline.length-1); i++){
     g.addEdge(greenbranchline[i], greenbranchline[i+1],2); 
 }
 
+//pink Line
+pink=require("./lines/pink.json");
+var pinkline = [];
+for(var i=0; i<pink.length; i++)
+{
+  pinkline[i]=pink[i]["Hindi"];
+}
+for (var i = 0; i < pinkline.length; i++) { 
+  if(pinkline[i]=='Azadpur' || pinkline[i]=='Netaji Subhash Place' || pinkline[i]=='Rajouri Garden' || pinkline[i]=='INA' || pinkline[i]=='Lajpat Nagar' || pinkline[i]=='Mayur Vihar – I')
+   continue;
+    else
+    g.addNode(pinkline[i]); 
+} 
+for(var i=0; i<(pinkline.length-1); i++){
+    g.addEdge(pinkline[i], pinkline[i+1],2); 
+}
+
+//pinkbranch Line
+pinkbranch=require("./lines/pinkbranch.json");
+var pinkbranchline = [];
+for(var i=0; i<pinkbranch.length; i++)
+{
+  pinkbranchline[i]=pinkbranch[i]["Hindi"];
+}
+for (var i = 0; i < pinkbranchline.length; i++) { 
+  if(pinkbranchline[i]=='Anand Vihar' || pinkbranchline[i]=='Karkarduma' || pinkbranchline[i]=='Welcome')
+   continue;
+    else
+    g.addNode(pinkbranchline[i]); 
+} 
+for(var i=0; i<(pinkbranchline.length-1); i++){
+    g.addEdge(pinkbranchline[i], pinkbranchline[i+1],2); 
+}
+
+
+
 
 
 //ShortestRouteCall
-g.shortestRoute("Brigadier Hoshiyar Singh", "Palam");
+//g.shortestRoute("Brigadier Hoshiyar Singh", "Palam");
 
 //AdjList of Station
-//g.printGraph("Ashok Park Main");
+g.printGraph("Shiv Vihar");
 
 
 //NOTE
