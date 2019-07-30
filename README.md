@@ -13,9 +13,9 @@ Route.js contains the code importing the lines with stations.
 The folder /lines contains the json files of the stations of all metro lines.
 
 ## Current Progress
-The following lines have been implemented (in order):
-  ->Blue
-  ->Blue Branch
-  ->Magenta
-  ->Yellow
-  ->Red
+The following lines have been implemented (in order):</br>
+  ->Blue</br>
+  ->Blue Branch</br>
+  ->Magenta</br>
+  ->Yellow</br>
+  ->Red</br>
