@@ -51,6 +51,7 @@ class Graph {
     console.log("--Directions from " + startNode + " to " + endNode + "--\n");
     var start=startNode;
     let times = {};
+    let lines = {};
     let backtrace = {};
     let pq = new PriorityQueue();
     times[startNode] = 0;
@@ -64,7 +65,15 @@ class Graph {
     let shortestStep = pq.dequeue();
     let currentNode = shortestStep[0];
     this.adjacencyList[currentNode].forEach(neighbor => {
-      let time = times[currentNode] + neighbor.weight;
+    let time = times[currentNode] + neighbor.weight;
+      if(currentNode!=startNode)
+      {
+        if(this.getline(currentNode,neighbor.node)!=this.getline(currentNode,backtrace[currentNode]))
+        {
+          time = time + 13;
+        }
+      }
+      
       if (time < times[neighbor.node]) {
         times[neighbor.node] = time;
         backtrace[neighbor.node] = currentNode;
@@ -77,12 +86,6 @@ class Graph {
   var change = [];
   var count=0;
   while(lastStep !== startNode) {
-<<<<<<< Updated upstream
-    path.unshift(backtrace[lastStep])
-    lastStep = backtrace[lastStep]
-  }
-  console.log("Path is \n" + path + " and time is " + times[endNode]) +" minutes.";
-=======
     if(this.getline(lastStep,backtrace[lastStep])!=this.getline(backtrace[lastStep],backtrace[backtrace[lastStep]]))
       if(backtrace[lastStep]==startNode)
         ;
@@ -93,26 +96,39 @@ class Graph {
     path.unshift(backtrace[lastStep])
     lastStep = backtrace[lastStep]
   }
-  for(var i=count-1; i>=0; i--)
-   console.log(change[i]);
+  for(var i=count-1; i>=0; i--){
+    //times[endNode]+=13;
+    console.log(change[i]);
+  }
+  
   
   console.log("\nComplete Route is \n" + path + " and time is " + times[endNode] +" minutes.");
->>>>>>> Stashed changes
       }
 
 printGraph(sta) 
 { 
   console.log("--Adjacency List Of " + sta + "--")
   for(var i=0; i<this.adjacencyList[sta].length; i++)
-    console.log(this.adjacencyList[sta][i]);
+    console.log(this.adjacencyList[sta][i].line);
 }
+
+getline(sta1,sta2) 
+{ 
+  for(var i=0; i<this.adjacencyList[sta1].length; i++) {
+    if(this.adjacencyList[sta1][i].node==sta2)
+      return(this.adjacencyList[sta1][i].line);
+  }  
 }
+
+}
+
+
 
 
 let g = new Graph();
 
 
-
+function importlines() {
 //
 //METRO LINES
 //
@@ -306,17 +322,12 @@ for(var i=0; i<(pinkbranchline.length-1); i++){
     g.addEdge(pinkbranchline[i], pinkbranchline[i+1],2.27, "pinkbranch"); 
 }
 
+}
 
-
-
+importlines();
 
 //ShortestRouteCall
-<<<<<<< Updated upstream
-g.shortestRoute("Model Town", "Palam");
-=======
-//g.printline("Janakpuri West", "Janakpuri East");
-g.shortestRoute("Palam", "Durgabai Deshmukh South Campus");
->>>>>>> Stashed changes
+g.shortestRoute("Palam", "Model Town");
 
 //AdjList of Station
 //g.printGraph("Rajouri Garden");
