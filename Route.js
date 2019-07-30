@@ -233,12 +233,30 @@ for(var i=0; i<(greenline.length-1); i++){
 }
 
 
+//greenbranch Line
+greenbranch=require("./lines/greenbranch.json");
+var greenbranchline = [];
+for(var i=0; i<greenbranch.length; i++)
+{
+  greenbranchline[i]=greenbranch[i]["Hindi"];
+}
+for (var i = 0; i < greenbranchline.length; i++) { 
+  if(greenbranchline[i]=='Kirti Nagar' || greenbranchline[i]=='Ashok Park Main')
+   continue;
+    else
+    g.addNode(greenbranchline[i]); 
+} 
+for(var i=0; i<(greenbranchline.length-1); i++){
+    g.addEdge(greenbranchline[i], greenbranchline[i+1],2); 
+}
+
+
 
 //ShortestRouteCall
-//g.shortestRoute("Brigadier Hoshiyar Singh", "Rithala");
+g.shortestRoute("Brigadier Hoshiyar Singh", "Palam");
 
 //AdjList of Station
-g.printGraph("Raja Nahar Singh (Ballabhgarh)");
+//g.printGraph("Ashok Park Main");
 
 
 //NOTE
