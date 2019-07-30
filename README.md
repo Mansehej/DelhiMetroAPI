@@ -11,3 +11,11 @@ Dijkstra's algorithm is used to find the route with the least time between two s
 ## Hierarchy
 Route.js contains the code importing the lines with stations.
 The folder /lines contains the json files of the stations of all metro lines.
+
+## Current Progress
+The following lines have been implemented (in order):
+  ->Blue
+  ->Blue Branch
+  ->Magenta
+  ->Yellow
+  ->Red
