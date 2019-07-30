@@ -1,3 +1,5 @@
+var express = require('express');
+var app=express();
 //QUEUE CLASS
 class PriorityQueue {
     constructor() {
@@ -49,9 +51,8 @@ class Graph {
       //Djikstra
     shortestRoute(startNode, endNode) {
     console.log("--Directions from " + startNode + " to " + endNode + "--\n");
-    var start=startNode;
     let times = {};
-    let lines = {};
+    var change = [];
     let backtrace = {};
     let pq = new PriorityQueue();
     times[startNode] = 0;
@@ -83,27 +84,43 @@ class Graph {
   }
   let path = [endNode];
   let lastStep = endNode;
-  var change = [];
+  
+  class all {
+    constructor() {
+      this.line1 = [];
+      this.line2 = [];
+      this.interchange = [];
+      this.path;
+      this.time;
+    }
+  }
+  var result = new all();
   var count=0;
   while(lastStep !== startNode) {
     if(this.getline(lastStep,backtrace[lastStep])!=this.getline(backtrace[lastStep],backtrace[backtrace[lastStep]]))
       if(backtrace[lastStep]==startNode)
         ;
       else {
-        change[count] = "Change from " + this.getline(backtrace[lastStep],backtrace[backtrace[lastStep]]) + " to " + this.getline(lastStep,backtrace[lastStep])  + " at " + backtrace[lastStep];
+        result.line1.push(this.getline(backtrace[lastStep],backtrace[backtrace[lastStep]]));
+        result.line2.push(this.getline(lastStep,backtrace[lastStep]))
+        result.interchange.push(backtrace[lastStep]);
         count++;
     }
     path.unshift(backtrace[lastStep])
     lastStep = backtrace[lastStep]
   }
-  for(var i=count-1; i>=0; i--){
-    //times[endNode]+=13;
-    console.log(change[i]);
-  }
+  //for(var i=count-1; i>=0; i--){
+   // result.line1[i]=line1[i];
+   // result.line2[i]=line2[i];
+    //result.interchange=interchange[i];
+ // }
+  result.path=path;
+  result.time=times[endNode];
   
-  
-  console.log("\nComplete Route is \n" + path + " and time is " + times[endNode] +" minutes.");
-      }
+  //all[1]=("\nComplete Route is \n" + path + " and time is " + times[endNode] +" minutes.");
+  return result;      
+
+}
 
 printGraph(sta) 
 { 
@@ -127,7 +144,16 @@ getline(sta1,sta2)
 
 let g = new Graph();
 
+app.get('/route',(req,res)=>{
+  let to= req.query.to
+  let from=  req.query.from
+  result=g.shortestRoute(from,to);
+  res.json(result)
+})
 
+app.get('/test',(req,res)=>{
+  res.send('niggernoobshadow')
+})
 function importlines() {
 //
 //METRO LINES
@@ -324,13 +350,20 @@ for(var i=0; i<(pinkbranchline.length-1); i++){
 
 }
 
-importlines();
+importlines()
+
+var port=5000 || process.env.PORT;
+
+app.listen(port, function () {
+  console.log("Server is running on port: " + port)
+})
 
 //ShortestRouteCall
-g.shortestRoute("Palam", "Model Town");
+//console.log(g.shortestRoute("Palam", "Model Town").interchange);
 
 //AdjList of Station
 //g.printGraph("Rajouri Garden");
+
 
 
 //NOTE
