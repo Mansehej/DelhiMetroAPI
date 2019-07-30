@@ -81,7 +81,7 @@ class Graph {
 
 printGraph(sta) 
 { 
-  for(var i=0; i<5; i++)
+  for(var i=0; i<this.adjacencyList[sta].length; i++)
     console.log(this.adjacencyList[sta][i]);
 }
 }
@@ -140,9 +140,8 @@ for(var i=0; i<10; i++){
 //Magenta 
 magenta=require("./lines/magenta.json");
 var magentaline = [];
-for(var i=0; magenta[i]["25"]!='Botanical Garden'; i++)
+for(var i=0; i<magenta.length; i++)
 {
-  
         magentaline[i]=magenta[i]["25"];
 }
 for (var i = 0; i <magentaline.length; i++) { 
@@ -161,10 +160,8 @@ for(var i=0; i<(magentaline.length-1); i++){
 //Yellow Line
 yellow=require("./lines/yellow.json");
 var yellowline = [];
-for(var i=0; yellow[i]["Hindi"]!='HUDA City Centre'; i++)
+for(var i=0; i<yellow.length; i++)
 {
-  //SKIP INTERCHANGE
-  
          yellowline[i]=yellow[i]["Hindi"];
 }
 for (var i = 0; i < yellowline.length; i++) { 
@@ -181,7 +178,7 @@ for(var i=0; i<(yellowline.length-1); i++){
 //Violet Line
 violet=require("./lines/violet.json");
 var violetline = [];
-for(var i=0; violet[i]["Hindi"]!='Raja Nahar Singh (Ballabhgarh)'; i++)
+for(var i=0; i<violet.length; i++)
 {
   
   violetline[i]=violet[i]["Hindi"];
@@ -201,7 +198,7 @@ for(var i=0; i<(violetline.length-1); i++){
 //red Line
 red=require("./lines/red.json");
 var redline = [];
-for(var i=0; red[i]["Hindi"]!='Rithala'; i++)
+for(var i=0; i<red.length; i++)
 {
   
   redline[i]=red[i]["Hindi"];
@@ -218,25 +215,30 @@ for(var i=0; i<(redline.length-1); i++){
 
 
 
-
-
-
-
-//
-//INTERCHANGES
-//
-
-//Magenta-Blue
-g.addEdge('Botanical Garden', 'Okhla Bird Sanctuary', 4);
-
+//green Line
+green=require("./lines/green.json");
+var greenline = [];
+for(var i=0; i<green.length; i++)
+{
+  greenline[i]=green[i]["Hindi"];
+}
+for (var i = 0; i < greenline.length; i++) { 
+  if(greenline[i]=='Inderlok')
+   continue;
+    else
+    g.addNode(greenline[i]); 
+} 
+for(var i=0; i<(greenline.length-1); i++){
+    g.addEdge(greenline[i], greenline[i+1],2); 
+}
 
 
 
 //ShortestRouteCall
-g.shortestRoute("Palam", "Azadpur");
+//g.shortestRoute("Brigadier Hoshiyar Singh", "Rithala");
 
 //AdjList of Station
-//g.printGraph("Kashmere Gate");
+g.printGraph("Raja Nahar Singh (Ballabhgarh)");
 
 
 //NOTE
