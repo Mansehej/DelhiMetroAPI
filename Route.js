@@ -41,9 +41,9 @@ class Graph {
         this.adjacencyList[node] = [];
       }
 
-      addEdge(node1, node2, weight) {
-        this.adjacencyList[node1].push({node:node2, weight: weight});
-        this.adjacencyList[node2].push({node:node1, weight: weight});
+      addEdge(node1, node2, weight, color) {
+        this.adjacencyList[node1].push({node:node2, weight: weight, line: color});
+        this.adjacencyList[node2].push({node:node1, weight: weight, line: color});
       }
 
       //Djikstra
@@ -81,6 +81,7 @@ class Graph {
 
 printGraph(sta) 
 { 
+  console.log("--Adjacency List Of " + sta + "--")
   for(var i=0; i<this.adjacencyList[sta].length; i++)
     console.log(this.adjacencyList[sta][i]);
 }
@@ -111,7 +112,7 @@ for (var i = 0; i < blueline.length; i++) {
 } 
 
 for(var i=0; i<49; i++){
-    g.addEdge(blueline[i], blueline[i+1],2); 
+    g.addEdge(blueline[i], blueline[i+1], 2.02, "blue"); 
 }
 
 
@@ -134,7 +135,7 @@ for (var i = 0; i < bluebranchline.length; i++) {
 } 
 
 for(var i=0; i<10; i++){
-    g.addEdge(bluebranchline[i], bluebranchline[i+1],2); 
+    g.addEdge(bluebranchline[i], bluebranchline[i+1], 1.875, "bluebranch"); 
 }
 
 //Magenta 
@@ -154,7 +155,7 @@ for (var i = 0; i <magentaline.length; i++) {
     g.addNode(magentaline[i]); 
 } 
 for(var i=0; i<(magentaline.length-1); i++){
-    g.addEdge(magentaline[i], magentaline[i+1],4); 
+    g.addEdge(magentaline[i], magentaline[i+1],2.36, "magenta"); 
 }
 
 //Yellow Line
@@ -171,7 +172,7 @@ for (var i = 0; i < yellowline.length; i++) {
     g.addNode(yellowline[i]); 
 } 
 for(var i=0; i<(yellowline.length-1); i++){
-    g.addEdge(yellowline[i], yellowline[i+1],2); 
+    g.addEdge(yellowline[i], yellowline[i+1],2.22, "yellow"); 
 }
 
 
@@ -190,7 +191,7 @@ for (var i = 0; i < violetline.length; i++) {
     g.addNode(violetline[i]); 
 } 
 for(var i=0; i<(violetline.length-1); i++){
-    g.addEdge(violetline[i], violetline[i+1],2); 
+    g.addEdge(violetline[i], violetline[i+1],2.24, "violet"); 
 }
 
 
@@ -210,7 +211,7 @@ for (var i = 0; i < redline.length; i++) {
     g.addNode(redline[i]); 
 } 
 for(var i=0; i<(redline.length-1); i++){
-    g.addEdge(redline[i], redline[i+1],2); 
+    g.addEdge(redline[i], redline[i+1],2.03, "red"); 
 }
 
 
@@ -229,7 +230,7 @@ for (var i = 0; i < greenline.length; i++) {
     g.addNode(greenline[i]); 
 } 
 for(var i=0; i<(greenline.length-1); i++){
-    g.addEdge(greenline[i], greenline[i+1],2); 
+    g.addEdge(greenline[i], greenline[i+1],2.49, "green"); 
 }
 
 
@@ -247,7 +248,7 @@ for (var i = 0; i < greenbranchline.length; i++) {
     g.addNode(greenbranchline[i]); 
 } 
 for(var i=0; i<(greenbranchline.length-1); i++){
-    g.addEdge(greenbranchline[i], greenbranchline[i+1],2); 
+    g.addEdge(greenbranchline[i], greenbranchline[i+1],1.33, "greenbranch"); 
 }
 
 //pink Line
@@ -264,7 +265,7 @@ for (var i = 0; i < pinkline.length; i++) {
     g.addNode(pinkline[i]); 
 } 
 for(var i=0; i<(pinkline.length-1); i++){
-    g.addEdge(pinkline[i], pinkline[i+1],2); 
+    g.addEdge(pinkline[i], pinkline[i+1],2.69, "pink"); 
 }
 
 //pinkbranch Line
@@ -281,7 +282,7 @@ for (var i = 0; i < pinkbranchline.length; i++) {
     g.addNode(pinkbranchline[i]); 
 } 
 for(var i=0; i<(pinkbranchline.length-1); i++){
-    g.addEdge(pinkbranchline[i], pinkbranchline[i+1],2); 
+    g.addEdge(pinkbranchline[i], pinkbranchline[i+1],2.27, "pinkbranch"); 
 }
 
 
@@ -289,10 +290,10 @@ for(var i=0; i<(pinkbranchline.length-1); i++){
 
 
 //ShortestRouteCall
-//g.shortestRoute("Brigadier Hoshiyar Singh", "Palam");
+g.shortestRoute("Model Town", "Palam");
 
 //AdjList of Station
-g.printGraph("Shiv Vihar");
+//g.printGraph("Rajouri Garden");
 
 
 //NOTE
@@ -307,3 +308,6 @@ g.printGraph("Shiv Vihar");
 //Yellow
 //Violet
 //Red
+//Green
+//Green Branch
+//Pink
