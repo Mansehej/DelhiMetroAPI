@@ -101,19 +101,16 @@ class Graph {
       if(backtrace[lastStep]==startNode)
         ;
       else {
-        result.line1.push(this.getline(backtrace[lastStep],backtrace[backtrace[lastStep]]));
-        result.line2.push(this.getline(lastStep,backtrace[lastStep]))
-        result.interchange.push(backtrace[lastStep]);
+        result.line1.unshift(this.getline(backtrace[lastStep],backtrace[backtrace[lastStep]]));
+        result.line2.unshift(this.getline(lastStep,backtrace[lastStep]))
+        result.interchange.unshift(backtrace[lastStep]);
         count++;
     }
+    console.log(result.interchange);
     path.unshift(backtrace[lastStep])
     lastStep = backtrace[lastStep]
   }
-  //for(var i=count-1; i>=0; i--){
-   // result.line1[i]=line1[i];
-   // result.line2[i]=line2[i];
-    //result.interchange=interchange[i];
- // }
+
   result.path=path;
   result.time=times[endNode];
   
@@ -148,12 +145,12 @@ app.get('/route',(req,res)=>{
   let to= req.query.to
   let from=  req.query.from
   result=g.shortestRoute(from,to);
-  res.json(result)
+  console.log(result)
+  
+  res.send(result)
 })
 
-app.get('/test',(req,res)=>{
-  res.send('niggernoobshadow')
-})
+
 function importlines() {
 //
 //METRO LINES
