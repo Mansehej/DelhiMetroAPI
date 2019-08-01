@@ -349,7 +349,7 @@ for(var i=0; i<(pinkbranchline.length-1); i++){
 
 importlines()
 
-var port=5000 || process.env.PORT;
+var port=( process.env.PORT || 5000 );
 
 app.listen(port, function () {
   console.log("Server is running on port: " + port)
