@@ -114,7 +114,10 @@ class Graph {
   result.path=path;
   result.time=times[endNode];
   
-  //all[1]=("\nComplete Route is \n" + path + " and time is " + times[endNode] +" minutes.");
+  if(result.interchange.length==0)
+    result.line1[0]=this.getline(result.path[0],result.path[1]);
+
+  
   return result;      
 
 }
