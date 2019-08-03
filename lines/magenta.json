@@ -32,7 +32,7 @@
         "Interchange\nConnection": "Side"
     },
     {
-        "25": "Terminal 1 IGI Airport",
+        "25": "Terminal 1-IGI Airport",
         "Hindi": "टर्मिनल 1 इन्दिरा गाँधी अंतर्राष्ट्रीय हवाई अड्डा",
         "Phase": "IGI Airport    Feeder Bus",
         "Opening": "Underground",
@@ -56,7 +56,7 @@
         "Hindi": "मुनिरका"
     },
     {
-        "25": "R.K Puram",
+        "25": "R.K.Puram",
         "Hindi": "राम कृष्ण पुरम"
     },
     {
