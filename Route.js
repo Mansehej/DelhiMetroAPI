@@ -71,7 +71,10 @@ class Graph {
       {
         if(this.getline(currentNode,neighbor.node)!=this.getline(currentNode,backtrace[currentNode]))
         {
-          time = time + 13;
+          if(this.getline(currentNode,neighbor.node)  == "1.2km Skywalk" ||this.getline(currentNode,backtrace[currentNode]) == "1.2km Skywalk")
+            time=time+0;
+          else
+            time = time + 13;
         }
       }
       
@@ -109,8 +112,7 @@ class Graph {
     console.log(result.interchange);
     path.unshift(backtrace[lastStep])
     lastStep = backtrace[lastStep]
-  }
-
+  }    
   result.path=path;
   result.time=times[endNode];
   
@@ -345,12 +347,33 @@ for (var i = 0; i < pinkbranchline.length; i++) {
     g.addNode(pinkbranchline[i]); 
 } 
 for(var i=0; i<(pinkbranchline.length-1); i++){
-    g.addEdge(pinkbranchline[i], pinkbranchline[i+1],2.27, "pinkbranch"); 
+    g.addEdge(pinkbranchline[i], pinkbranchline[i+1],2.43, "pinkbranch"); 
 }
+
+//Orange
+orange=require("./lines/orange.json");
+var orangeline = [];
+for(var i=0; i<orange.length; i++)
+{
+  orangeline[i]=orange[i]["Hindi"];
+}
+for (var i = 0; i < orangeline.length; i++) { 
+  if(orangeline[i]=='New Delhi' || orangeline[i]=='Dwarka Sector 21')
+   continue;
+    else
+    g.addNode(orangeline[i]); 
+} 
+for(var i=0; i<(orangeline.length-1); i++){
+    g.addEdge(orangeline[i], orangeline[i+1], 5.2, "orange"); 
+}
+
+//Dhaula Kuan - South Campus Connection
+g.addEdge("Dhaula Kuan", "Durgabai Deshmukh South Campus", 18, "1.2km Skywalk"); 
 
 }
 
-importlines()
+importlines();
+
 
 var port=( process.env.PORT || 5000 );
 
