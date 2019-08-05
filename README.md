@@ -21,3 +21,7 @@ The following lines have been implemented (in order):</br>
   ->Red</br>
   ->Green</br>
   ->Green Branch</br>
+  ->Violet</br>
+  ->Pink</br>
+  ->Pink Branch</br>
+  ->Orange (Airport Express Line)
