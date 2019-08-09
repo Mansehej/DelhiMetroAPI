@@ -24,4 +24,10 @@ The following lines have been implemented (in order):</br>
   ->Violet</br>
   ->Pink</br>
   ->Pink Branch</br>
-  ->Orange (Airport Express Line)
+  ->Orange (Airport Express Line)</br>
+  
+  ## API Calling
+  The API is hosted at Heroku, and can be called at:</br>
+  https://delhi-metro-router.herokuapp.com/route/
+  with a GET query and parameters as from (source station) and to (destination station).</br>
+  For example, the API call for a route between Dwarka and Palam would be: https://delhi-metro-router.herokuapp.com/route/?to=Palam&from=Dwarka .
