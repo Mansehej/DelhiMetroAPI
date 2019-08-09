@@ -1,0 +1,62 @@
+[
+    {
+        "8": "None",
+        "English": "1",
+        "Hindi": "New Delhi",
+        "Opening": "नई दिल्ली",
+        "Interchange\nConnection": "23 February 2011",
+        "Station Layout": "Yellow Line \n Indian Railways    Bus Terminal",
+        "Depot Connection": "Underground",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "2",
+        "Hindi": "Shivaji Stadium",
+        "Opening": "शिवाजी स्टेडियम",
+        "Interchange\nConnection": "23 February 2011",
+        "Station Layout": "Bus Terminal",
+        "Depot Connection": "Underground",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "3",
+        "Hindi": "Dhaula Kuan",
+        "Opening": "धौला कुआँ",
+        "Interchange\nConnection": "15 August 2011",
+        "Station Layout": "Pink Line    Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "4",
+        "Hindi": "Delhi Aerocity",
+        "Opening": "दिल्ली एरोसिटी",
+        "Interchange\nConnection": "15 August 2011",
+        "Station Layout": "IGI Airport    Feeder Bus",
+        "Depot Connection": "Underground",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "5",
+        "Hindi": "Airport",
+        "Opening": "विमानपत्तन",
+        "Interchange\nConnection": "23 February 2011",
+        "Station Layout": "IGI Airport    Feeder Bus",
+        "Depot Connection": "Underground",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "At Grade",
+        "English": "6",
+        "Hindi": "Dwarka Sector 21",
+        "Opening": "द्वारका सेक्टर २१",
+        "Interchange\nConnection": "23 February 2011",
+        "Station Layout": "Blue Line  Feeder Bus",
+        "Depot Connection": "Underground",
+        "Depot Layout": "Dwarka Sector 21 Depot"
+    }
+]

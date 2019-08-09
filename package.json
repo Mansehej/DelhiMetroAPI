@@ -1,0 +1,15 @@
+{
+    "name": "delhi_metro_api",
+    "version": "1.0.0",
+    "main": "Route.js",
+    "scripts": {
+        "start": "Route.js"
+    },
+    "dependencies": {
+        "axios": "^0.19.0",
+        "express": "4.17.1",
+        "node": "12.7.0",
+        "request": "^2.88.0",
+        "request-promise-native": "^1.0.7"
+    }
+}

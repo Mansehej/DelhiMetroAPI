@@ -1,0 +1,212 @@
+[
+    {
+        "8": "None",
+        "English": "1",
+        "Hindi": "Inderlok",
+        "Opening": "इंद्रलोक",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Red Line \n Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "2",
+        "Hindi": "Ashok Park Main",
+        "Opening": "अशोक पार्क मेन",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "3",
+        "Hindi": "Punjabi Bagh",
+        "Opening": "पंजाबी बाग़",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Bus Terminal",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "4",
+        "Hindi": "Shivaji Park",
+        "Opening": "शिवाजी पार्क",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "5",
+        "Hindi": "Madipur",
+        "Opening": "मादीपुर",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "6",
+        "Hindi": "Paschim Vihar East",
+        "Opening": "पश्चिम विहार पूर्व",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "7",
+        "Hindi": "Paschim Vihar West",
+        "Opening": "पश्चिम विहार पश्चिम",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "8",
+        "Hindi": "Peera Garhi",
+        "Opening": "पीरागढ़ी",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "9",
+        "Hindi": "Udyog Nagar",
+        "Opening": "उद्योग नगर",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "10",
+        "Hindi": "Surajmal Stadium",
+        "Opening": "सूरजमल स्टेडियम",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "11",
+        "Hindi": "Nangloi",
+        "Opening": "नांगलोई",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Bus Terminal",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "12",
+        "Hindi": "Nangloi Railway station",
+        "Opening": "नांगलोई रेलवे स्टेशन",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Indian Railways \n Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "13",
+        "Hindi": "Rajdhani Park",
+        "Opening": "राजधानी पार्क",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "At Grade",
+        "English": "14",
+        "Hindi": "Mundka",
+        "Opening": "मुण्डका",
+        "Interchange\nConnection": "3 April 2010[4]",
+        "Station Layout": "Indian Railways \n Bus Terminal",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "Mundka Depot"
+    },
+    {
+        "8": "None",
+        "English": "15",
+        "Hindi": "Mundka Industrial Area",
+        "Opening": "मुण्डका औद्योगिक क्षेत्र",
+        "Interchange\nConnection": "24 June 2018",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "16",
+        "Hindi": "Ghevra Metro station",
+        "Opening": "घेवरा मेट्रो स्टेशन",
+        "Interchange\nConnection": "24 June 2018",
+        "Station Layout": "Indian Railways",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "17",
+        "Hindi": "Tikri Kalan",
+        "Opening": "टीकरी कलाँ",
+        "Interchange\nConnection": "24 June 2018",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "18",
+        "Hindi": "Tikri Border",
+        "Opening": "टीकरी बॉर्डर",
+        "Interchange\nConnection": "24 June 2018",
+        "Station Layout": "Bus Terminal",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "At Grade",
+        "English": "19",
+        "Hindi": "Pandit Shree Ram Sharma",
+        "Opening": "पंडित श्री राम शर्मा",
+        "Interchange\nConnection": "24 June 2018",
+        "Station Layout": "Bus Terminal",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "Modern Industrial Estate (MIE)\nDepot"
+    },
+    {
+        "8": "None",
+        "English": "20",
+        "Hindi": "Bahadurgarh City",
+        "Opening": "बहादुरगढ़ सिटी",
+        "Interchange\nConnection": "24 June 2018",
+        "Station Layout": "Bus Terminal",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "21",
+        "Hindi": "Brigadier Hoshiyar Singh",
+        "Opening": "ब्रिगेडियर होशियार सिंह",
+        "Interchange\nConnection": "24 June 2018",
+        "Station Layout": "Indian Railways",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    }
+]

@@ -1,0 +1,2 @@
+"$basedir/../node/bin/node"   "$@"
+exit $?

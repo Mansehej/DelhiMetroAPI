@@ -1,0 +1,242 @@
+[
+    {
+        "English": "6",
+        "Hindi": "Samaypur Badli",
+        "Phase": "समयपुर बादली",
+        "Opening": "10 November 2015",
+        "Interchange\nConnection": "Indian Railways    Bus Terminal",
+        "Station Layout": "Elevated",
+        "Depot Connection": "None",
+        "Depot Layout": "None"
+    },
+    {
+        "English": "7",
+        "Hindi": "Rohini Sector 18",
+        "Phase": "रोहिणी सेक्टर 18, 19",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "8",
+        "Hindi": "Haiderpur",
+        "Phase": "हैदरपुर बादली मोड़"
+    },
+    {
+        "9": "None",
+        "English": "9",
+        "Hindi": "Jahangirpuri",
+        "Phase": "जहाँगीरपुरी",
+        "Opening": "2",
+        "Interchange\nConnection": "4 February 2009",
+        "Station Layout": "Bus Terminal",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "English": "10",
+        "Hindi": "Adarsh Nagar",
+        "Phase": "आदर्श नगर",
+        "Opening": "Indian Railways    Feeder Bus"
+    },
+    {
+        "English": "11",
+        "Hindi": "Azadpur",
+        "Phase": "आज़ादपुर",
+        "Opening": "Pink Line    Indian Railways \n Bus Terminal"
+    },
+    {
+        "English": "12",
+        "Hindi": "Model Town",
+        "Phase": "मॉडल टाउन",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "13",
+        "Hindi": "GTB Nagar",
+        "Phase": "गुरु तेग बहादुर नगर",
+        "Opening": "Underground"
+    },
+    {
+        "9": "At Grade",
+        "English": "14",
+        "Hindi": "Vishwa Vidyalaya",
+        "Phase": "विश्व विद्यालय",
+        "Opening": "1",
+        "Interchange\nConnection": "20 December 2004",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "Underground",
+        "Depot Layout": "Vishwa Vidyalaya\nKhyber Pass Depot"
+    },
+    {
+        "English": "15",
+        "Hindi": "Vidhan Sabha",
+        "Phase": "विधान सभा",
+        "Opening": "None",
+        "Interchange\nConnection": "None"
+    },
+    {
+        "English": "16",
+        "Hindi": "Civil Lines",
+        "Phase": "सिविल लाइन्स"
+    },
+    {
+        "English": "17",
+        "Hindi": "Kashmere Gate",
+        "Phase": "कश्मीरी गेट",
+        "Opening": "Red Line    Violet Line    ISBT"
+    },
+    {
+        "English": "18",
+        "Hindi": "Chandni Chowk",
+        "Phase": "चाँदनी चौक",
+        "Opening": "3 July 2005",
+        "Interchange\nConnection": "Indian Railways"
+    },
+    {
+        "English": "19",
+        "Hindi": "Chawri Bazar",
+        "Phase": "चावड़ी बाजार",
+        "Opening": "None"
+    },
+    {
+        "English": "20",
+        "Hindi": "New Delhi",
+        "Phase": "नई दिल्ली",
+        "Opening": "Orange Line    Indian Railways \n Bus Terminal"
+    },
+    {
+        "English": "21",
+        "Hindi": "Rajiv Chowk",
+        "Phase": "राजीव चौक",
+        "Opening": "Blue Line    Bus Terminal"
+    },
+    {
+        "English": "22",
+        "Hindi": "Patel Chowk",
+        "Phase": "पटेल चौक",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "23",
+        "Hindi": "Central Secretariat",
+        "Phase": "केन्द्रीय सचिवालय",
+        "Opening": "Violet Line    Bus Terminal"
+    },
+    {
+        "9": "None",
+        "English": "24",
+        "Hindi": "Udyog Bhawan",
+        "Phase": "उद्योग भवन",
+        "Opening": "2",
+        "Interchange\nConnection": "3 September 2010",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "Underground",
+        "Depot Layout": "None"
+    },
+    {
+        "English": "25",
+        "Hindi": "Lok Kalyan Marg",
+        "Phase": "लोक कल्याण मार्ग"
+    },
+    {
+        "English": "26",
+        "Hindi": "Jor Bagh",
+        "Phase": "जोर बाग़"
+    },
+    {
+        "English": "27",
+        "Hindi": "INA",
+        "Phase": "आई.एन.ए",
+        "Opening": "Pink Line    Feeder Bus"
+    },
+    {
+        "English": "28",
+        "Hindi": "AIIMS",
+        "Phase": "एम्स",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "29",
+        "Hindi": "Green Park",
+        "Phase": "ग्रीन पार्क"
+    },
+    {
+        "English": "30",
+        "Hindi": "Hauz Khas",
+        "Phase": "हौज़ खास",
+        "Opening": "Magenta Line    Feeder Bus"
+    },
+    {
+        "English": "31",
+        "Hindi": "Malviya Nagar",
+        "Phase": "मालवीय नगर",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "32",
+        "Hindi": "Saket",
+        "Phase": "साकेत"
+    },
+    {
+        "English": "33",
+        "Hindi": "Qutub Minar",
+        "Phase": "क़ुतुब मीनार",
+        "Opening": "21 June 2010",
+        "Interchange\nConnection": "Bus Terminal",
+        "Station Layout": "Elevated"
+    },
+    {
+        "English": "34",
+        "Hindi": "Chhatarpur",
+        "Phase": "छत्तरपुर",
+        "Opening": "26 August 2010"
+    },
+    {
+        "English": "35",
+        "Hindi": "Sultanpur",
+        "Phase": "सुल्तानपुर",
+        "Opening": "21 June 2010",
+        "Interchange\nConnection": "Sultanpur Depot",
+        "Station Layout": "At Grade"
+    },
+    {
+        "English": "36",
+        "Hindi": "Ghitorni",
+        "Phase": "घिटोरनी",
+        "Opening": "Feeder Bus",
+        "Interchange\nConnection": "None",
+        "Station Layout": "None"
+    },
+    {
+        "English": "37",
+        "Hindi": "Arjan Garh",
+        "Phase": "अर्जन गढ़"
+    },
+    {
+        "English": "38",
+        "Hindi": "Guru Dronacharya",
+        "Phase": "गुरु द्रोणाचार्य"
+    },
+    {
+        "English": "39",
+        "Hindi": "Sikandarpur",
+        "Phase": "सिकन्दरपुर",
+        "Opening": "Rapid Metro Gurgaon   Feeder Bus"
+    },
+    {
+        "English": "40",
+        "Hindi": "MG Road",
+        "Phase": "एम जी रोड",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "41",
+        "Hindi": "IFFCO Chowk",
+        "Phase": "इफ़्को चौक"
+    },
+    {
+        "English": "42",
+        "Hindi": "HUDA City Centre",
+        "Phase": "हुडा सिटी सैंटर",
+        "Opening": "Bus Terminal"
+    }
+]

@@ -1,0 +1,330 @@
+[
+    {
+        "10": "Elevated",
+        "English": "1",
+        "Hindi": "Noida Electronic City",
+        "Phase": "नोएडा इलैक्ट्रौनिक सिटी",
+        "Opening": "3",
+        "Interchange\nConnection": "9 March 2019",
+        "Station Layout": "Bus Terminal",
+        "Platform Level Type": "Elevated",
+        "Depot Connection": "Side",
+        "Depot Layout": "Noida Electronic City Depot"
+    },
+    {
+        "English": "2",
+        "Hindi": "Noida Sector 62",
+        "Phase": "नोएडा सेक्टर 62",
+        "Opening": "Feeder Bus",
+        "Interchange\nConnection": "None",
+        "Station Layout": "None"
+    },
+    {
+        "English": "3",
+        "Hindi": "Noida Sector 59",
+        "Phase": "नोएडा सेक्टर 59"
+    },
+    {
+        "English": "4",
+        "Hindi": "Noida Sector 61",
+        "Phase": "नोएडा सेक्टर 61"
+    },
+    {
+        "English": "5",
+        "Hindi": "Noida Sector 52",
+        "Phase": "नोएडा सेक्टर 52",
+        "Opening": "Aqua Line    Bus Terminal"
+    },
+    {
+        "English": "6",
+        "Hindi": "Noida Sector 34",
+        "Phase": "नोएडा सेक्टर 34",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "10": "None",
+        "English": "7",
+        "Hindi": "Noida City Centre",
+        "Phase": "नोएडा सिटी सेंटर",
+        "Opening": "2",
+        "Interchange\nConnection": "12 November 2009",
+        "Station Layout": "Feeder Bus",
+        "Platform Level Type": "Elevated",
+        "Depot Connection": "Side",
+        "Depot Layout": "None"
+    },
+    {
+        "English": "8",
+        "Hindi": "Golf Course",
+        "Phase": "गोल्फ कोर्स"
+    },
+    {
+        "English": "9",
+        "Hindi": "Botanical Garden",
+        "Phase": "बॉटानिकल गार्डन",
+        "Opening": "Magenta Line   Feeder Bus"
+    },
+    {
+        "English": "10",
+        "Hindi": "Noida Sector 18",
+        "Phase": "नोएडा सेक्टर १८",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "11",
+        "Hindi": "Noida Sector 16",
+        "Phase": "नोएडा सेक्टर १६"
+    },
+    {
+        "English": "12",
+        "Hindi": "Noida Sector 15",
+        "Phase": "नोएडा सेक्टर १५"
+    },
+    {
+        "English": "13",
+        "Hindi": "New Ashok Nagar",
+        "Phase": "नया अशोक नगर"
+    },
+    {
+        "English": "14",
+        "Hindi": "Mayur Vihar Extension",
+        "Phase": "मयूर विहार विस्तार",
+        "Opening": "Island"
+    },
+    {
+        "English": "15",
+        "Hindi": "Mayur Vihar – I",
+        "Phase": "मयूर विहार-१",
+        "Opening": "Pink Line"
+    },
+    {
+        "English": "16",
+        "Hindi": "Akshardham",
+        "Phase": "अक्षरधाम",
+        "Opening": "Feeder Bus",
+        "Interchange\nConnection": "Side"
+    },
+    {
+        "English": "17",
+        "Hindi": "Yamuna Bank",
+        "Phase": "यमुना बैंक",
+        "Opening": "10 May 2009",
+        "Interchange\nConnection": "Feeder Bus",
+        "Station Layout": "At Grade",
+        "Platform Level Type": "Side",
+        "Depot Connection": "Yamuna Bank Depot",
+        "Depot Layout": "At Grade"
+    },
+    {
+        "10": "None",
+        "English": "18",
+        "Hindi": "Indraprastha",
+        "Phase": "इंद्रप्रस्थ",
+        "Opening": "1",
+        "Interchange\nConnection": "11 November 2006",
+        "Station Layout": "Bus Terminal",
+        "Platform Level Type": "Elevated",
+        "Depot Connection": "Side",
+        "Depot Layout": "None"
+    },
+    {
+        "English": "19",
+        "Hindi": "Pragati Maidan",
+        "Phase": "प्रगति मैदान",
+        "Opening": "Indian Railways    Feeder Bus"
+    },
+    {
+        "English": "20",
+        "Hindi": "Mandi House",
+        "Phase": "मंडी हाउस",
+        "Opening": "Violet Line    Feeder Bus",
+        "Interchange\nConnection": "Underground"
+    },
+    {
+        "English": "21",
+        "Hindi": "Barakhambha Road",
+        "Phase": "बाराखम्भा मार्ग",
+        "Opening": "31 December 2005",
+        "Interchange\nConnection": "Indian Railways    Feeder Bus"
+    },
+    {
+        "English": "22",
+        "Hindi": "Rajiv Chowk",
+        "Phase": "राजीव चौक",
+        "Opening": "Yellow Line    Bus Terminal"
+    },
+    {
+        "English": "23",
+        "Hindi": "Ramakrishna Ashram Marg",
+        "Phase": "रामकृष्ण आश्रम मार्ग",
+        "Opening": "Feeder Bus",
+        "Interchange\nConnection": "Elevated",
+        "Station Layout": "Side",
+        "Platform Level Type": "None",
+        "Depot Connection": "None"
+    },
+    {
+        "English": "24",
+        "Hindi": "Jhandewalan",
+        "Phase": "झंडेवालान"
+    },
+    {
+        "English": "25",
+        "Hindi": "Karol Bagh",
+        "Phase": "क़रोल बाग़"
+    },
+    {
+        "English": "26",
+        "Hindi": "Rajendra Place",
+        "Phase": "राजेंद्र प्लेस"
+    },
+    {
+        "English": "27",
+        "Hindi": "Patel Nagar",
+        "Phase": "पटेल नगर"
+    },
+    {
+        "English": "28",
+        "Hindi": "Shadipur",
+        "Phase": "शादीपुर"
+    },
+    {
+        "English": "29",
+        "Hindi": "Kirti Nagar",
+        "Phase": "कीर्ति नगर",
+        "Opening": "Green Line   Feeder Bus"
+    },
+    {
+        "English": "30",
+        "Hindi": "Moti Nagar",
+        "Phase": "मोती नगर",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "31",
+        "Hindi": "Ramesh Nagar",
+        "Phase": "रमेश नगर"
+    },
+    {
+        "English": "32",
+        "Hindi": "Rajouri Garden",
+        "Phase": "राजौरी गार्डन",
+        "Opening": "Pink Line"
+    },
+    {
+        "English": "33",
+        "Hindi": "Tagore Garden",
+        "Phase": "टैगोर गार्डन",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "34",
+        "Hindi": "Subhash Nagar",
+        "Phase": "सुभाष नगर"
+    },
+    {
+        "English": "35",
+        "Hindi": "Tilak Nagar",
+        "Phase": "तिलक नगर"
+    },
+    {
+        "English": "36",
+        "Hindi": "Janakpuri East",
+        "Phase": "जनकपुरी पूर्व"
+    },
+    {
+        "English": "37",
+        "Hindi": "Janakpuri West",
+        "Phase": "जनकपुरी पश्चिम",
+        "Opening": "Magenta Line   Feeder Bus"
+    },
+    {
+        "English": "38",
+        "Hindi": "Uttam Nagar East",
+        "Phase": "उत्तम नगर पूर्व",
+        "Opening": "Bus Terminal"
+    },
+    {
+        "English": "39",
+        "Hindi": "Uttam Nagar West",
+        "Phase": "उत्तम नगर पश्चिम",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "40",
+        "Hindi": "Nawada",
+        "Phase": "नवादा"
+    },
+    {
+        "English": "41",
+        "Hindi": "Dwarka Mor",
+        "Phase": "द्वारका मोड़",
+        "Opening": "Bus Terminal"
+    },
+    {
+        "English": "42",
+        "Hindi": "Dwarka",
+        "Phase": "द्वारका",
+        "Opening": "Feeder Bus",
+        "Interchange\nConnection": "Elevated",
+        "Station Layout": "Side",
+        "Platform Level Type": "Dwarka - Najafgarh\nDepot",
+        "Depot Connection": "At Grade"
+    },
+    {
+        "10": "None",
+        "English": "43",
+        "Hindi": "Dwarka Sector 14",
+        "Phase": "द्वारका सैक्टर १४",
+        "Opening": "2",
+        "Interchange\nConnection": "1 April 2006",
+        "Station Layout": "",
+        "Platform Level Type": "Elevated",
+        "Depot Connection": "Side",
+        "Depot Layout": "None"
+    },
+    {
+        "English": "44",
+        "Hindi": "Dwarka Sector 13",
+        "Phase": "द्वारका सैक्टर १३",
+        "Opening": ""
+    },
+    {
+        "English": "45",
+        "Hindi": "Dwarka Sector 12",
+        "Phase": "द्वारका सैक्टर १२",
+        "Opening": ""
+    },
+    {
+        "English": "46",
+        "Hindi": "Dwarka Sector 11",
+        "Phase": "द्वारका सैक्टर ११",
+        "Opening": ""
+    },
+    {
+        "English": "47",
+        "Hindi": "Dwarka Sector 10",
+        "Phase": "द्वारका सैक्टर १०",
+        "Opening": ""
+    },
+    {
+        "English": "48",
+        "Hindi": "Dwarka Sector 9",
+        "Phase": "द्वारका सैक्टर ९",
+        "Opening": ""
+    },
+    {
+        "English": "49",
+        "Hindi": "Dwarka Sector 8",
+        "Phase": "द्वारका सैक्टर ८",
+        "Opening": "30 October 2010",
+        "Interchange\nConnection": "Indian Railways    Bus Terminal"
+    },
+    {
+        "English": "50",
+        "Hindi": "Dwarka Sector 21",
+        "Phase": "द्वारका सैक्टर २१",
+        "Opening": "Orange Line \n Feeder Bus",
+        "Interchange\nConnection": "Underground"
+    }
+]

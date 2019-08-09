@@ -1,0 +1,32 @@
+[
+    {
+        "8": "None",
+        "English": "1",
+        "Hindi": "Ashok Park Main",
+        "Opening": "अशोक पार्क मेन",
+        "Interchange\nConnection": "3 April 2010",
+        "Station Layout": "Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "2",
+        "Hindi": "Satguru Ram Singh Marg",
+        "Opening": "सतगुरु राम सिंह मार्ग",
+        "Interchange\nConnection": "27 August 2011",
+        "Station Layout": "Indian Railways \n Feeder Bus",
+        "Depot Connection": "Elevated",
+        "Depot Layout": "None"
+    },
+    {
+        "8": "None",
+        "English": "3",
+        "Hindi": "Kirti Nagar",
+        "Opening": "कीर्ति नगर",
+        "Interchange\nConnection": "27 August 2011",
+        "Station Layout": "Blue Line \n Bus Terminal",
+        "Depot Connection": "At Grade",
+        "Depot Layout": "None"
+    }
+]

@@ -1,0 +1,244 @@
+[
+    {
+        "10": "None",
+        "English": "5",
+        "Hindi": "Kashmere Gate",
+        "Phase": "कश्मीरी गेट",
+        "Opening": "3",
+        "Interchange\nConnection": "20 December 2004",
+        "Station Layout": "Red Line    Yellow Line    ISBT",
+        "Platform Level Type": "Underground",
+        "Depot Connection": "Island",
+        "Depot Layout": "None"
+    },
+    {
+        "English": "6",
+        "Hindi": "Lal Qila",
+        "Phase": "लाल किला",
+        "Opening": "28 May 2017",
+        "Interchange\nConnection": "Feeder Bus"
+    },
+    {
+        "English": "7",
+        "Hindi": "Jama Masjid",
+        "Phase": "जामा मस्जिद"
+    },
+    {
+        "English": "8",
+        "Hindi": "Delhi Gate",
+        "Phase": "दिल्ली गेट"
+    },
+    {
+        "English": "9",
+        "Hindi": "ITO",
+        "Phase": "आईटीओ",
+        "Opening": "8 June 2015",
+        "Interchange\nConnection": "Indian Railways    Feeder Bus"
+    },
+    {
+        "10": "None",
+        "English": "10",
+        "Hindi": "Mandi House",
+        "Phase": "मंडी हाउस",
+        "Opening": "2",
+        "Interchange\nConnection": "26 June 2014",
+        "Station Layout": "Blue Line    Indian Railways    Feeder Bus",
+        "Platform Level Type": "Underground",
+        "Depot Connection": "Island",
+        "Depot Layout": "None"
+    },
+    {
+        "English": "11",
+        "Hindi": "Janpath",
+        "Phase": "जनपथ",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "10": "None",
+        "English": "12",
+        "Hindi": "Central Secretariat",
+        "Phase": "केंद्रीय सचिवालय",
+        "Opening": "1",
+        "Interchange\nConnection": "3 October 2010",
+        "Station Layout": "Yellow Line    Feeder Bus",
+        "Platform Level Type": "Underground",
+        "Depot Connection": "Side",
+        "Depot Layout": "None"
+    },
+    {
+        "English": "13",
+        "Hindi": "Khan Market",
+        "Phase": "खान बाजार",
+        "Opening": "Feeder Bus",
+        "Interchange\nConnection": "Island"
+    },
+    {
+        "English": "14",
+        "Hindi": "Jawaharlal Nehru Stadium",
+        "Phase": "जवाहर लाल नेहरू स्टेडियम",
+        "Opening": "Bus Terminal"
+    },
+    {
+        "English": "15",
+        "Hindi": "Jangpura",
+        "Phase": "जंगपुरा",
+        "Opening": "Indian Railways    Feeder Bus"
+    },
+    {
+        "English": "16",
+        "Hindi": "Lajpat Nagar",
+        "Phase": "लाजपत नगर",
+        "Opening": "Pink Line   Bus Terminal",
+        "Interchange\nConnection": "Elevated",
+        "Station Layout": "Side"
+    },
+    {
+        "English": "17",
+        "Hindi": "Moolchand",
+        "Phase": "मूलचंद",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "18",
+        "Hindi": "Kailash Colony",
+        "Phase": "कैलाश कॉलोनी",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "19",
+        "Hindi": "Nehru Place",
+        "Phase": "नेहरू प्लेस",
+        "Opening": "Bus Terminal"
+    },
+    {
+        "English": "20",
+        "Hindi": "Kalkaji Mandir",
+        "Phase": "कालकाजी मंदिर",
+        "Opening": "Magenta Line    Bus Terminal"
+    },
+    {
+        "English": "21",
+        "Hindi": "Govind Puri",
+        "Phase": "गोविंद पुरी",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "22",
+        "Hindi": "Harkesh Nagar",
+        "Phase": "हरकेश नगर",
+        "Opening": "Indian Railways"
+    },
+    {
+        "English": "23",
+        "Hindi": "Jasola Apollo",
+        "Phase": "जसोला अपोलो",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "24",
+        "Hindi": "Sarita Vihar",
+        "Phase": "सरिता विहार",
+        "Opening": "Feeder Bus",
+        "Interchange\nConnection": "Sarita Vihar Depot",
+        "Station Layout": "At Grade"
+    },
+    {
+        "10": "None",
+        "English": "25",
+        "Hindi": "Mohan Estate",
+        "Phase": "मोहन एस्टेट",
+        "Opening": "2",
+        "Interchange\nConnection": "14 January 2011",
+        "Station Layout": "Feeder Bus",
+        "Platform Level Type": "Elevated",
+        "Depot Connection": "Side",
+        "Depot Layout": "None"
+    },
+    {
+        "English": "26",
+        "Hindi": "Tughlakabad",
+        "Phase": "तुगलकाबाद",
+        "Opening": "Indian Railways   Bus Terminal"
+    },
+    {
+        "English": "27",
+        "Hindi": "Badarpur",
+        "Phase": "बदरपुर",
+        "Opening": "Bus Terminal"
+    },
+    {
+        "English": "28",
+        "Hindi": "Sarai",
+        "Phase": "सराय",
+        "Opening": "3",
+        "Interchange\nConnection": "6 September 2015",
+        "Station Layout": "Feeder Bus",
+        "Platform Level Type": "Elevated",
+        "Depot Connection": "Side"
+    },
+    {
+        "English": "29",
+        "Hindi": "NHPC Chowk",
+        "Phase": "एनएचपीसी चौक",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "30",
+        "Hindi": "Mewala Maharajpur",
+        "Phase": "मेवला महाराजपुर",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "31",
+        "Hindi": "Sector 28",
+        "Phase": "सेक्टर 28",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "32",
+        "Hindi": "Badkhal Mor",
+        "Phase": "बदखल मोर",
+        "Opening": "Feeder Bus"
+    },
+    {
+        "English": "33",
+        "Hindi": "Faridabad Old",
+        "Phase": "फरीदाबाद ओल्ड",
+        "Opening": "Indian Railways    Bus Terminal"
+    },
+    {
+        "English": "34",
+        "Hindi": "Neelam Chowk Ajronda",
+        "Phase": "नीलम चौक अज्रोंडा",
+        "Opening": "Feeder Bus",
+        "Interchange\nConnection": "Neelam Chowk Ajronda Depot",
+        "Station Layout": "At Grade"
+    },
+    {
+        "English": "35",
+        "Hindi": "Bata Chowk",
+        "Phase": "बाटा चौक",
+        "Opening": "Feeder Bus",
+        "Interchange\nConnection": "None",
+        "Station Layout": "None"
+    },
+    {
+        "English": "36",
+        "Hindi": "Escorts Mujesar",
+        "Phase": "एस्कॉर्ट्स मुजेसर",
+        "Opening": "Indian Railways    Feeder Bus"
+    },
+    {
+        "English": "37",
+        "Hindi": "Sant Surdas",
+        "Phase": "संत सूरदास - सिही (एनसीबी कॉलोनी - गुड ईयर)",
+        "Opening": "19 November 2018",
+        "Interchange\nConnection": "Feeder Bus"
+    },
+    {
+        "English": "38",
+        "Hindi": "Raja Nahar Singh",
+        "Phase": "राजा नाहर सिंह (बल्लभगढ़)",
+        "Opening": "Indian Railways    Bus Terminal"
+    }
+]
