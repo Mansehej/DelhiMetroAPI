@@ -1,0 +1,21 @@
+{
+  "name": "delhimetroapi",
+  "description": "API to get Delhi Metro Routes",
+  "version": "0.0.1",
+  "private": true,
+  "license": "Apache Version 2.0",
+  "author": "Mansehej Singh",
+  "engines": {
+    "node": "8"
+  },
+  "scripts": {
+    "start": "index.js",
+    "deploy": "index.js"
+  },
+  "dependencies": {
+    "request": "2.88.0",
+    "firebase-admin": "^8.3.0",
+    "firebase-functions": "^3.2.0",
+    "express": "4.17.1 "
+  }
+}
