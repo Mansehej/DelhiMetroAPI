@@ -27,7 +27,7 @@ The following lines have been implemented (in order):</br>
   ->Orange (Airport Express Line)</br>
   
   ## API Calling
-  The API is hosted at Heroku, and can be called at:</br>
-  https://delhi-metro-router.herokuapp.com/route/
+  The API is hosted on Google Firebase, and can be called at:</br>
+  https://us-central1-delhimetroapi.cloudfunctions.net/route
   with a GET query and parameters as from (source station) and to (destination station).</br>
-  For example, the API call for a route between Dwarka and Palam would be: https://delhi-metro-router.herokuapp.com/route/?to=Palam&from=Dwarka .
+  For example, the API call for a route between Dwarka and Palam would be: https://us-central1-delhimetroapi.cloudfunctions.net/route?from=Dwarka&to=Palam.
