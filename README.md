@@ -9,8 +9,8 @@ The metro lines are implemented in a Graph data structure in Javascript. Each st
 Dijkstra's algorithm is used to find the route with the least time between two stations.
 
 ## Hierarchy
-Route.js contains the code importing the lines with stations.
-The folder /lines contains the json files of the stations of all metro lines.
+functions/index.js contains the code importing the lines with stations.
+The folder functions/lines contains the json files of the stations of all metro lines.
 
 ## Current Progress
 The following lines have been implemented (in order):</br>
@@ -26,7 +26,14 @@ The following lines have been implemented (in order):</br>
   ->Pink Branch</br>
   ->Orange (Airport Express Line)</br>
   
-  ## API Calling
+## Features
+  ->Get shortest complete path from Source Station to Destination Station</br>
+  ->Get list of Interchange Stations in order</br>
+  ->Get Metro Lines Changed</br>
+  ->Get Total Travel Time</br>
+  ->Get Final Station of Metro Line in direction of destination/next interchange</br>
+ 
+ ## API Calling
   The API is hosted on Google Firebase, and can be called at:</br>
   https://us-central1-delhimetroapi.cloudfunctions.net/route
   with a GET query and parameters as from (source station) and to (destination station).</br>
