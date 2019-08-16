@@ -140,6 +140,7 @@ class Graph {
 
 
 function lineChoose(linein) {
+  var line=[]  
   if (linein == 'blue')
     line = blueline;
   else if (linein == 'bluebranch')
@@ -162,6 +163,8 @@ function lineChoose(linein) {
     line = pinkbranchline;
   else if (linein == 'orange')
     line = orangeline;
+  else 
+    line = 0;
   return line;
 }
 
@@ -173,6 +176,8 @@ function getLast(path, interchange, line1, line2) {
   linein = line1[0]
   line = lineChoose(linein)
   out.push(getLastCalcStart(line, path, interchange));
+  if(line2.length==0)
+    return out
   for (var i = 0; i < (line2.length); i++) {
     linein = line2[i]
     line = lineChoose(linein)
@@ -186,18 +191,23 @@ function getLast(path, interchange, line1, line2) {
 function getLastCalc(line, path, interchange, nextInterchange) {
   var startPos = 1000
   var endPos = 1000
-
+  if(line==0)
+    return 0
+  console.log(nextInterchange)
   for (var j = 0; j <= line.length; j++) {
+    //startpos
     if (line[j] == interchange)
       startPos = j;
-    if (nextInterchange == undefined) {
-      if (line[j] == path[path.length])
-        endPos = j;
+    //endpos
+      if (nextInterchange == undefined) {
+        if (line[j] == path[path.length-1])
+          endPos = j;
     }
     else if (line[j] == nextInterchange) {
           endPos = j;
     }
   }
+  console.log('\nStart: ' + startPos + '\nEnd: '+endPos)
   if (endPos < startPos)
     return line[0]
   else
@@ -207,12 +217,23 @@ function getLastCalc(line, path, interchange, nextInterchange) {
 
 
 function getLastCalcStart(line, path, interchange) {
+  var startPos = 1000
+  var endPos = 1000
+  if(line==0)
+    return 0
   for (var i = 0; i <= line.length; i++) {
+    //startpos
     if (line[i] == path[0])
       startPos = i;
-    if (line[i] == interchange[0])
+    //endpos
+    if(interchange.length == 0) {
+      if(line[i] == path[path.length-1])
+        endPos = i
+    }
+    else if (line[i] == interchange[0])
       endPos = i;
   }
+  console.log('\nStart: ' + startPos + '\nEnd: '+endPos)
   if (endPos < startPos)
     return line[0]
   else
@@ -220,16 +241,6 @@ function getLastCalcStart(line, path, interchange) {
 }
 
 let g = new Graph();
-
-app.get('/route', (req, res) => {
-  let to = req.query.to
-  let from = req.query.from
-  result = g.shortestRoute(from, to);
-  console.log(result)
-
-  res.send(result)
-})
-
 
 var blueline = [];
 var bluebranchline = [];
@@ -255,7 +266,7 @@ function importlines() {
 
   blue = require("./lines/blue.json");
 
-  for (var i = 0; i < 50; i++) {
+  for (var i = 0; i < blue.length; i++) {
     blueline[i] = blue[i]["Hindi"];
   }
 
@@ -263,7 +274,7 @@ function importlines() {
     g.addNode(blueline[i]);
   }
 
-  for (var i = 0; i < 49; i++) {
+  for (var i = 0; i < (blueline.length - 1); i++) {
     g.addEdge(blueline[i], blueline[i + 1], 2.02, "blue");
   }
 
@@ -272,11 +283,10 @@ function importlines() {
   //BlueBranch
   bluebranch = require("./lines/bluebranch.json");
 
-  for (var i = 0; i < 11; i++) {
+  for (var i = 0; i < bluebranch.length; i++) {
 
     bluebranchline[i] = bluebranch[i]["Hindi"];
   }
-
   for (var i = 0; i < bluebranchline.length; i++) {
     //Skip Interchange
     if (bluebranchline[i] == 'Yamuna Bank')
@@ -285,7 +295,7 @@ function importlines() {
       g.addNode(bluebranchline[i]);
   }
 
-  for (var i = 0; i < 10; i++) {
+  for (var i = 0; i < (bluebranchline.length - 1); i++) {
     g.addEdge(bluebranchline[i], bluebranchline[i + 1], 1.875, "bluebranch");
   }
 

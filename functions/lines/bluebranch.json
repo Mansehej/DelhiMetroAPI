@@ -56,34 +56,5 @@
         "Hindi": "Vaishali",
         "Phase": "वैशाली",
         "Opening": "Feeder Bus"
-    },
-    {
-        "10": "None",
-        "English": "9",
-        "Hindi": "Vaishali Extension",
-        "Phase": "वैशाली एक्सटेंशन",
-        "Opening": "4",
-        "Interchange\nConnection": "2025",
-        "Station Layout": "Feeder Bus",
-        "Platform Level Type": "Elevated",
-        "Depot Connection": "Side",
-        "Depot Layout": "None"
-    },
-    {
-        "English": "10",
-        "Hindi": "Vasundhra Sector 14",
-        "Phase": "वसुंधरा सेक्टर 14"
-    },
-    {
-        "English": "11",
-        "Hindi": "Sahibabad",
-        "Phase": "साहिबाबाद",
-        "Opening": "Feeder Bus"
-    },
-    {
-        "English": "12",
-        "Hindi": "Mohan Nagar",
-        "Phase": "मोहन नगर",
-        "Opening": "Red Line \n Bus Terminal"
     }
 ]
