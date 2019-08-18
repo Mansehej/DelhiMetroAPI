@@ -104,9 +104,17 @@ class Graph {
         if (backtrace[lastStep] == startNode)
           ;
         else {
-          result.line1.unshift(this.getline(backtrace[lastStep], backtrace[backtrace[lastStep]]));
-          result.line2.unshift(this.getline(lastStep, backtrace[lastStep]))
-          result.interchange.unshift(backtrace[lastStep]);
+          var line1Send=this.getline(backtrace[lastStep], backtrace[backtrace[lastStep]]);
+          var line2Send=this.getline(lastStep, backtrace[lastStep]);
+          var interchangeSend=backtrace[lastStep];
+          //if(interchangeSend=='Yamuna Bank')
+            //if(line1Send==bluebranchline)
+
+
+          result.line1.unshift(line1Send);
+          result.line2.unshift(line2Send);
+          result.interchange.unshift(interchangeSend);
+          
           count++;
         }
       console.log(result.interchange);
@@ -135,9 +143,7 @@ class Graph {
         return (this.adjacencyList[sta1][i].line);
     }
   }
-
 }
-
 
 function lineChoose(linein) {
   var line=[]  
@@ -169,24 +175,29 @@ function lineChoose(linein) {
 }
 
 function getLast(path, interchange, line1, line2) {
-
   var line
   var linein
   var out = [];
   linein = line1[0]
-  line = lineChoose(linein)
-  out.push(getLastCalcStart(line, path, interchange));
+  if(linein=='bluebranch' && interchange[0]=='Yamuna Bank')
+    out.push('Dwarka Sector 21');
+  else {
+    line = lineChoose(linein)
+    out.push(getLastCalcStart(line, path, interchange));
+  }
   if(line2.length==0)
     return out
   for (var i = 0; i < (line2.length); i++) {
     linein = line2[i]
-    line = lineChoose(linein)
-    out.push(getLastCalc(line, path, interchange[i], interchange[i + 1]))
+    if(linein=='bluebranch' && line2[i+1]=='Yamuna Bank')
+      out.push('Dwarka Sector 21');
+    else {
+      line = lineChoose(linein)
+      out.push(getLastCalc(line, path, interchange[i], interchange[i + 1]))
+    }
   }
   return out
  }
-
-
 
 function getLastCalc(line, path, interchange, nextInterchange) {
   var startPos = 1000
