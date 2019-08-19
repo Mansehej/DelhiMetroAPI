@@ -72,8 +72,10 @@ class Graph {
           if (this.getline(currentNode, neighbor.node) != this.getline(currentNode, backtrace[currentNode])) {
             if (this.getline(currentNode, neighbor.node) == "1.2km Skywalk" || this.getline(currentNode, backtrace[currentNode]) == "1.2km Skywalk")
               time = time + 0;
+            else if (this.getline(currentNode, neighbor.node) == "300m Walkway/Free e-Rickshaw" || this.getline(currentNode, backtrace[currentNode]) == "300m Walkway/Free e-Rickshaw")
+              time = time + 0;
             else
-              time = time + 13;
+              time = time + 9;
           }
         }
 
@@ -104,17 +106,13 @@ class Graph {
         if (backtrace[lastStep] == startNode)
           ;
         else {
-          var line1Send=this.getline(backtrace[lastStep], backtrace[backtrace[lastStep]]);
-          var line2Send=this.getline(lastStep, backtrace[lastStep]);
-          var interchangeSend=backtrace[lastStep];
-          //if(interchangeSend=='Yamuna Bank')
-            //if(line1Send==bluebranchline)
-
-
+          var line1Send = this.getline(backtrace[lastStep], backtrace[backtrace[lastStep]]);
+          var line2Send = this.getline(lastStep, backtrace[lastStep]);
+          var interchangeSend = backtrace[lastStep];
           result.line1.unshift(line1Send);
           result.line2.unshift(line2Send);
           result.interchange.unshift(interchangeSend);
-          
+
           count++;
         }
       console.log(result.interchange);
@@ -145,8 +143,18 @@ class Graph {
   }
 }
 
+exports.route = functions.https.onRequest((req, res) => {
+  let to = req.query.to
+  let from = req.query.from
+  let g=new Graph
+  importlines();
+  result = g.shortestRoute(from, to);
+  console.log(result)
+  res.send(result)
+})
+
 function lineChoose(linein) {
-  var line=[]  
+  var line = []
   if (linein == 'blue')
     line = blueline;
   else if (linein == 'bluebranch')
@@ -169,7 +177,9 @@ function lineChoose(linein) {
     line = pinkbranchline;
   else if (linein == 'orange')
     line = orangeline;
-  else 
+  else if (linein == 'aqua')
+    line = aqualine;
+  else
     line = 0;
   return line;
 }
@@ -179,17 +189,17 @@ function getLast(path, interchange, line1, line2) {
   var linein
   var out = [];
   linein = line1[0]
-  if(linein=='bluebranch' && interchange[0]=='Yamuna Bank')
+  if (linein == 'bluebranch' && interchange[0] == 'Yamuna Bank')
     out.push('Dwarka Sector 21');
   else {
     line = lineChoose(linein)
     out.push(getLastCalcStart(line, path, interchange));
   }
-  if(line2.length==0)
+  if (line2.length == 0)
     return out
   for (var i = 0; i < (line2.length); i++) {
     linein = line2[i]
-    if(linein=='bluebranch' && line2[i+1]=='Yamuna Bank')
+    if (linein == 'bluebranch' && line2[i + 1] == 'Yamuna Bank')
       out.push('Dwarka Sector 21');
     else {
       line = lineChoose(linein)
@@ -197,12 +207,12 @@ function getLast(path, interchange, line1, line2) {
     }
   }
   return out
- }
+}
 
 function getLastCalc(line, path, interchange, nextInterchange) {
   var startPos = 1000
   var endPos = 1000
-  if(line==0)
+  if (line == 0)
     return 0
   console.log(nextInterchange)
   for (var j = 0; j <= line.length; j++) {
@@ -210,15 +220,15 @@ function getLastCalc(line, path, interchange, nextInterchange) {
     if (line[j] == interchange)
       startPos = j;
     //endpos
-      if (nextInterchange == undefined) {
-        if (line[j] == path[path.length-1])
-          endPos = j;
+    if (nextInterchange == undefined) {
+      if (line[j] == path[path.length - 1])
+        endPos = j;
     }
     else if (line[j] == nextInterchange) {
-          endPos = j;
+      endPos = j;
     }
   }
-  console.log('\nStart: ' + startPos + '\nEnd: '+endPos)
+  console.log('\nStart: ' + startPos + '\nEnd: ' + endPos)
   if (endPos < startPos)
     return line[0]
   else
@@ -230,28 +240,28 @@ function getLastCalc(line, path, interchange, nextInterchange) {
 function getLastCalcStart(line, path, interchange) {
   var startPos = 1000
   var endPos = 1000
-  if(line==0)
+  if (line == 0)
     return 0
   for (var i = 0; i <= line.length; i++) {
     //startpos
     if (line[i] == path[0])
       startPos = i;
     //endpos
-    if(interchange.length == 0) {
-      if(line[i] == path[path.length-1])
+    if (interchange.length == 0) {
+      if (line[i] == path[path.length - 1])
         endPos = i
     }
     else if (line[i] == interchange[0])
       endPos = i;
   }
-  console.log('\nStart: ' + startPos + '\nEnd: '+endPos)
+  console.log('\nStart: ' + startPos + '\nEnd: ' + endPos)
   if (endPos < startPos)
     return line[0]
   else
     return line[line.length - 1];
 }
 
-let g = new Graph();
+//let g = new Graph();
 
 var blueline = [];
 var bluebranchline = [];
@@ -264,6 +274,7 @@ var greenbranchline = [];
 var pinkline = [];
 var pinkbranchline = [];
 var orangeline = [];
+var aqualine = [];
 
 
 function importlines() {
@@ -465,21 +476,38 @@ function importlines() {
     g.addEdge(orangeline[i], orangeline[i + 1], 5.2, "orange");
   }
 
+
+
+
+  //Aqua Line
+
+  aqua = require("./lines/aqua.json");
+
+  for (var i = 0; i < aqua.length; i++) {
+    aqualine[i] = aqua[i]["Hindi"];
+  }
+
+  for (var i = 0; i < aqualine.length; i++) {
+    g.addNode(aqualine[i]);
+  }
+
+  for (var i = 0; i < (aqualine.length - 1); i++) {
+    g.addEdge(aqualine[i], aqualine[i + 1], 2.86, "aqua");
+  }
+
   //Dhaula Kuan - South Campus Connection
   g.addEdge("Dhaula Kuan", "Durgabai Deshmukh South Campus", 18, "1.2km Skywalk");
 
+  //Noida Sec 52 - Noida Sec 51
+  g.addEdge("Noida Sector 52", "Noida Sector 51", 12, "300m Walkway/Free e-Rickshaw");
+
+
 }
 
-importlines();
+//importlines();
 
 
-exports.route = functions.https.onRequest((req, res)=>{
-  let to= req.query.to
-  let from=  req.query.from
-  result=g.shortestRoute(from,to);
-  console.log(result)
-  res.send(result)
-})
+
 
 //ShortestRouteCall
 //console.log(g.shortestRoute("Palam", "Model Town").interchange);
@@ -505,3 +533,5 @@ exports.route = functions.https.onRequest((req, res)=>{
 //Green Branch
 //Pink
 //Pink Branch
+//Orange
+//Aqua
