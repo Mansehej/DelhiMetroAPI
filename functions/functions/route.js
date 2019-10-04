@@ -188,6 +188,8 @@ function lineChoose(linein) {
     line = orangeline;
   else if (linein == 'aqua')
     line = aqualine;
+  else if (linein == 'grey')
+    line = greyline;
   else
     line = 0;
   return line;
@@ -303,6 +305,7 @@ var pinkline = [];
 var pinkbranchline = [];
 var orangeline = [];
 var aqualine = [];
+var greyline = [];
 
 //Imports station details from JSON to line arrays
 function importlines() {
@@ -523,6 +526,29 @@ function importlines() {
     g.addEdge(aqualine[i], aqualine[i + 1], 2.86, "aqua");
   }
 
+
+
+  //Grey Line
+
+  grey = require("./lines/grey.json");
+
+  for (var i = 0; i < grey.length; i++) {
+    greyline[i] = grey[i]["2"];
+  }
+
+
+  for (var i = 0; i < greyline.length; i++) {
+    if (greyline[i] == 'Dwarka')
+      continue;
+    else
+    g.addNode(greyline[i]);
+  }
+
+  for (var i = 0; i < (greyline.length - 1); i++) {
+    g.addEdge(greyline[i], greyline[i + 1], 2.10, "grey");
+  }
+
+  
   //Dhaula Kuan - South Campus Connection
   g.addEdge("Dhaula Kuan", "Durgabai Deshmukh South Campus", 18, "1.2km Skywalk");
 
