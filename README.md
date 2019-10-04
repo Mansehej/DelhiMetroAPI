@@ -25,6 +25,8 @@ The following lines have been implemented (in order):</br>
   ->Pink</br>
   ->Pink Branch</br>
   ->Orange (Airport Express Line)</br>
+  ->Aqua </br>
+  ->Grey</br>
   
 ## Features
   ->Get shortest complete path from Source Station to Destination Station</br>
@@ -35,6 +37,6 @@ The following lines have been implemented (in order):</br>
  
  ## API Calling
   The API is hosted on Google Firebase, and can be called at:</br>
-  https://us-central1-delhimetroapi.cloudfunctions.net/route
+  https://us-central1-delhimetroapi.cloudfunctions.net/route-get
   with a GET query and parameters as from (source station) and to (destination station).</br>
-  For example, the API call for a route between Dwarka and Palam would be: https://us-central1-delhimetroapi.cloudfunctions.net/route?from=Dwarka&to=Palam.
+  For example, the API call for a route between Dwarka and Palam would be: https://us-central1-delhimetroapi.cloudfunctions.net/route-get?from=Dwarka&to=Palam.
