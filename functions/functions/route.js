@@ -84,6 +84,13 @@ class Graph {
             //Noida Sector 51 - Noida Sector 52 Handler
             else if (this.getline(currentNode, neighbor.node) == "300m Walkway/Free e-Rickshaw" || this.getline(currentNode, backtrace[currentNode]) == "300m Walkway/Free e-Rickshaw")
               time = time + 0;
+            //Ashok Park Main handler
+            else if (currentNode == 'Ashok Park Main' && neighbor.node == 'Punjabi Bagh' && backtrace[currentNode] == 'Satguru Ram Singh Marg') {
+              time = time + 0;
+            }
+            else if (currentNode == 'Ashok Park Main' && neighbor.node == 'Satguru Ram Singh Marg' && backtrace[currentNode] == 'Punjabi Bagh') {
+              time = time + 0;
+            }
             //Interchange Time Penalty
             else
               time = time + 9;
@@ -122,6 +129,13 @@ class Graph {
           ;
         }
         else if (backtrace[lastStep] == 'Yamuna Bank' && lastStep == 'Laxmi Nagar' && backtrace[backtrace[lastStep]] == 'Indraprastha') {
+          ;
+        }
+        //Ashok Park Main Handler
+        else if (backtrace[lastStep] == 'Ashok Park Main' && lastStep == 'Punjabi Bagh' && backtrace[backtrace[lastStep]] == 'Satguru Ram Singh Marg') {
+          ;
+        }
+        else if (backtrace[lastStep] == 'Ashok Park Main' && lastStep == 'Satguru Ram Singh Marg' && backtrace[backtrace[lastStep]] == 'Punjabi Bagh') {
           ;
         }
         else {
@@ -206,6 +220,10 @@ function getLast(path, interchange, line1, line2) {
   if (linein == 'bluebranch' && interchange[0] == 'Yamuna Bank') {
     out.push('Dwarka Sector 21');
   }
+  //Greenbranch at Ashok Park Main Handler
+  else if (linein == 'greenbranch' && interchange[0] == 'Ashok Park Main') {
+    out.push('Brigadier Hoshiyar Singh');
+  }
 
   else {
     line = lineChoose(linein)
@@ -273,6 +291,10 @@ function comparePos(startPos, endPos, line) {
       return 'Dwarka Sector 21'
     else if (line == bluebranchline)
       return 'Vaishali'
+    else if (line == greenline)
+    return 'Brigadier Hoshiyar Singh'
+  else if (line == greenbranchline)
+    return 'Kirti Nagar'
   }
   //Out of line end handler
   if (endPos == 1000) {
@@ -280,10 +302,16 @@ function comparePos(startPos, endPos, line) {
       return 'Vaishali';
     else if (line == bluebranchline)
       return 'Dwarka Sector 21'
+      else if (line == greenline)
+    return 'Kirti Nagar'
+  else if (line == greenbranchline)
+    return 'Brigadier Hoshiyar Singh'
   }
   if (endPos < startPos) {
     if(line == bluebranchline)
         return 'Dwarka Sector 21'
+      if(line == greenbranchline)
+        return 'Brigadier Hoshiyar Singh'
     return line[0]
   }
   else
@@ -595,3 +623,4 @@ exports.get = functions.https.onRequest((req, res) => {
 //Pink Branch
 //Orange
 //Aqua
+//Grey
