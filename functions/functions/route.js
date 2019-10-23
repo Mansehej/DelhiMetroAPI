@@ -602,6 +602,8 @@ function importlines() {
   //Noida Sec 52 - Noida Sec 51
   g.addEdge("Noida Sector 52", "Noida Sector 51", 12, "300m Walkway/Free e-Rickshaw");
 
+  //Aqua Line Looper
+  g.addEdge("Phase 2", "Vodafone Belvedere Towers", 5.2, "rapid");
 
 }
 
