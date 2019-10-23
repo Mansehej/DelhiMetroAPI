@@ -1,7 +1,5 @@
 var express = require('express');
 var app = express();
-const functions = require('firebase-functions');
-
 //QUEUE CLASS
 class PriorityQueue {
   constructor() {
@@ -33,7 +31,7 @@ class PriorityQueue {
   };
 }
 
-//GRAPH CLASS
+
 class Graph {
   constructor() {
     this.nodes = [];
@@ -71,29 +69,10 @@ class Graph {
         let time = times[currentNode] + neighbor.weight;
         if (currentNode != startNode) {
           if (this.getline(currentNode, neighbor.node) != this.getline(currentNode, backtrace[currentNode])) {
-            //Yamuna Bank Handler
-            if (currentNode == 'Yamuna Bank' && neighbor.node == 'Indraprastha' && backtrace[currentNode] == 'Laxmi Nagar') {
+            if (this.getline(currentNode, neighbor.node) == "1.2km Skywalk" || this.getline(currentNode, backtrace[currentNode]) == "1.2km Skywalk")
               time = time + 0;
-            }
-            else if (currentNode == 'Yamuna Bank' && neighbor.node == 'Laxmi Nagar' && backtrace[currentNode] == 'Indraprastha') {
-              time = time + 0;
-            }
-            //Dhaula Kuan - Durgabai Deshmukh South Campus Handler
-            else if (this.getline(currentNode, neighbor.node) == "1.2km Skywalk" || this.getline(currentNode, backtrace[currentNode]) == "1.2km Skywalk")
-              time = time + 0;
-            //Noida Sector 51 - Noida Sector 52 Handler
-            else if (this.getline(currentNode, neighbor.node) == "300m Walkway/Free e-Rickshaw" || this.getline(currentNode, backtrace[currentNode]) == "300m Walkway/Free e-Rickshaw")
-              time = time + 0;
-            //Ashok Park Main handler
-            else if (currentNode == 'Ashok Park Main' && neighbor.node == 'Punjabi Bagh' && backtrace[currentNode] == 'Satguru Ram Singh Marg') {
-              time = time + 0;
-            }
-            else if (currentNode == 'Ashok Park Main' && neighbor.node == 'Satguru Ram Singh Marg' && backtrace[currentNode] == 'Punjabi Bagh') {
-              time = time + 0;
-            }
-            //Interchange Time Penalty
             else
-              time = time + 9;
+              time = time + 13;
           }
         }
 
@@ -107,7 +86,6 @@ class Graph {
     let path = [endNode];
     let lastStep = endNode;
 
-    //Class to send as result
     class all {
       constructor() {
         this.line1 = [];
@@ -119,33 +97,18 @@ class Graph {
       }
     }
     var result = new all();
-
+    var count = 0;
     while (lastStep !== startNode) {
       if (this.getline(lastStep, backtrace[lastStep]) != this.getline(backtrace[lastStep], backtrace[backtrace[lastStep]]))
         if (backtrace[lastStep] == startNode)
           ;
-        //Yamuna Bank Handler
-        else if (backtrace[lastStep] == 'Yamuna Bank' && lastStep == 'Indraprastha' && backtrace[backtrace[lastStep]] == 'Laxmi Nagar') {
-          ;
-        }
-        else if (backtrace[lastStep] == 'Yamuna Bank' && lastStep == 'Laxmi Nagar' && backtrace[backtrace[lastStep]] == 'Indraprastha') {
-          ;
-        }
-        //Ashok Park Main Handler
-        else if (backtrace[lastStep] == 'Ashok Park Main' && lastStep == 'Punjabi Bagh' && backtrace[backtrace[lastStep]] == 'Satguru Ram Singh Marg') {
-          ;
-        }
-        else if (backtrace[lastStep] == 'Ashok Park Main' && lastStep == 'Satguru Ram Singh Marg' && backtrace[backtrace[lastStep]] == 'Punjabi Bagh') {
-          ;
-        }
         else {
-          var line1Send = this.getline(backtrace[lastStep], backtrace[backtrace[lastStep]]);
-          var line2Send = this.getline(lastStep, backtrace[lastStep]);
-          var interchangeSend = backtrace[lastStep];
-          result.line1.unshift(line1Send);
-          result.line2.unshift(line2Send);
-          result.interchange.unshift(interchangeSend);
+          result.line1.unshift(this.getline(backtrace[lastStep], backtrace[backtrace[lastStep]]));
+          result.line2.unshift(this.getline(lastStep, backtrace[lastStep]))
+          result.interchange.unshift(backtrace[lastStep]);
+          count++;
         }
+      console.log(result.interchange);
       path.unshift(backtrace[lastStep])
       lastStep = backtrace[lastStep]
     }
@@ -155,7 +118,6 @@ class Graph {
     if (result.interchange.length == 0)
       result.line1[0] = this.getline(result.path[0], result.path[1]);
     result.lineEnds = getLast(result.path, result.interchange, result.line1, result.line2)
-    console.log(result.time)
     return result;
 
   }
@@ -166,18 +128,17 @@ class Graph {
       console.log(this.adjacencyList[sta][i].line);
   }
 
-  //Returns line between two adjacent stations
   getline(sta1, sta2) {
     for (var i = 0; i < this.adjacencyList[sta1].length; i++) {
       if (this.adjacencyList[sta1][i].node == sta2)
         return (this.adjacencyList[sta1][i].line);
     }
   }
+
 }
 
-//Chooses station array based on input
+
 function lineChoose(linein) {
-  var line = []
   if (linein == 'blue')
     line = blueline;
   else if (linein == 'bluebranch')
@@ -200,127 +161,75 @@ function lineChoose(linein) {
     line = pinkbranchline;
   else if (linein == 'orange')
     line = orangeline;
-  else if (linein == 'aqua')
-    line = aqualine;
-  else if (linein == 'grey')
-    line = greyline;
-  else
-    line = 0;
   return line;
 }
 
-//Gets last station on line in direction of traversal
 function getLast(path, interchange, line1, line2) {
+
   var line
   var linein
   var out = [];
   linein = line1[0]
-
-  //Bluebranch at Yamuna Bank Handler
-  if (linein == 'bluebranch' && interchange[0] == 'Yamuna Bank') {
-    out.push('Dwarka Sector 21');
-  }
-  //Greenbranch at Ashok Park Main Handler
-  else if (linein == 'greenbranch' && interchange[0] == 'Ashok Park Main') {
-    out.push('Brigadier Hoshiyar Singh');
-  }
-
-  else {
-    line = lineChoose(linein)
-    out.push(getLastCalcStart(line, path, interchange));
-  }
-  if (line2.length == 0)
-    return out
+  line = lineChoose(linein)
+  out.push(getLastCalcStart(line, path, interchange));
   for (var i = 0; i < (line2.length); i++) {
     linein = line2[i]
-
     line = lineChoose(linein)
     out.push(getLastCalc(line, path, interchange[i], interchange[i + 1]))
   }
   return out
-}
+ }
 
-//Last station calculator first line
-function getLastCalcStart(line, path, interchange) {
-  var startPos = 1000
-  var endPos = 1000
-  if (line == 0)
-    return 0
-  for (var i = 0; i <= line.length; i++) {
-    //startpos
-    if (line[i] == path[0])
-      startPos = i;
-    //endpos
-    if (interchange.length == 0) {
-      if (line[i] == path[path.length - 1])
-        endPos = i
-    }
-    else if (line[i] == interchange[0])
-      endPos = i;
-  }
-  return comparePos(startPos, endPos, line)
-}
 
-//Last station calculator for all lines except first
+
 function getLastCalc(line, path, interchange, nextInterchange) {
   var startPos = 1000
   var endPos = 1000
-  if (line == 0)
-    return 0
+
   for (var j = 0; j <= line.length; j++) {
-    //startpos
     if (line[j] == interchange)
       startPos = j;
-    //endpos
     if (nextInterchange == undefined) {
-      if (line[j] == path[path.length - 1])
+      if (line[j] == path[path.length])
         endPos = j;
     }
     else if (line[j] == nextInterchange) {
-      endPos = j;
+          endPos = j;
     }
   }
-  return comparePos(startPos, endPos, line)
-}
-
-//Returns station based on comparisons
-function comparePos(startPos, endPos, line) {
-  //Out of line start handler
-  if (startPos == 1000) {
-    if (line == blueline)
-      return 'Dwarka Sector 21'
-    else if (line == bluebranchline)
-      return 'Vaishali'
-    else if (line == greenline)
-    return 'Brigadier Hoshiyar Singh'
-  else if (line == greenbranchline)
-    return 'Kirti Nagar'
-  }
-  //Out of line end handler
-  if (endPos == 1000) {
-    if (line == blueline)
-      return 'Vaishali';
-    else if (line == bluebranchline)
-      return 'Dwarka Sector 21'
-      else if (line == greenline)
-    return 'Kirti Nagar'
-  else if (line == greenbranchline)
-    return 'Brigadier Hoshiyar Singh'
-  }
-  if (endPos < startPos) {
-    if(line == bluebranchline)
-        return 'Dwarka Sector 21'
-      if(line == greenbranchline)
-        return 'Brigadier Hoshiyar Singh'
+  if (endPos < startPos)
     return line[0]
-  }
   else
     return line[line.length - 1];
-
 }
 
 
-//Declare metro line arrays globally
+
+function getLastCalcStart(line, path, interchange) {
+  for (var i = 0; i <= line.length; i++) {
+    if (line[i] == path[0])
+      startPos = i;
+    if (line[i] == interchange[0])
+      endPos = i;
+  }
+  if (endPos < startPos)
+    return line[0]
+  else
+    return line[line.length - 1];
+}
+
+let g = new Graph();
+
+app.get('/route', (req, res) => {
+  let to = req.query.to
+  let from = req.query.from
+  result = g.shortestRoute(from, to);
+  console.log(result)
+
+  res.send(result)
+})
+
+
 var blueline = [];
 var bluebranchline = [];
 var magentaline = [];
@@ -332,11 +241,8 @@ var greenbranchline = [];
 var pinkline = [];
 var pinkbranchline = [];
 var orangeline = [];
-var aqualine = [];
-var greyline = [];
-var rapidline = [];
 
-//Imports station details from JSON to line arrays
+
 function importlines() {
   //
   //METRO LINES
@@ -348,7 +254,7 @@ function importlines() {
 
   blue = require("./lines/blue.json");
 
-  for (var i = 0; i < blue.length; i++) {
+  for (var i = 0; i < 50; i++) {
     blueline[i] = blue[i]["Hindi"];
   }
 
@@ -356,7 +262,7 @@ function importlines() {
     g.addNode(blueline[i]);
   }
 
-  for (var i = 0; i < (blueline.length - 1); i++) {
+  for (var i = 0; i < 49; i++) {
     g.addEdge(blueline[i], blueline[i + 1], 2.02, "blue");
   }
 
@@ -365,10 +271,11 @@ function importlines() {
   //BlueBranch
   bluebranch = require("./lines/bluebranch.json");
 
-  for (var i = 0; i < bluebranch.length; i++) {
+  for (var i = 0; i < 11; i++) {
 
     bluebranchline[i] = bluebranch[i]["Hindi"];
   }
+
   for (var i = 0; i < bluebranchline.length; i++) {
     //Skip Interchange
     if (bluebranchline[i] == 'Yamuna Bank')
@@ -377,7 +284,7 @@ function importlines() {
       g.addNode(bluebranchline[i]);
   }
 
-  for (var i = 0; i < (bluebranchline.length - 1); i++) {
+  for (var i = 0; i < 10; i++) {
     g.addEdge(bluebranchline[i], bluebranchline[i + 1], 1.875, "bluebranch");
   }
 
@@ -536,98 +443,34 @@ function importlines() {
     g.addEdge(orangeline[i], orangeline[i + 1], 5.2, "orange");
   }
 
-  
-
-
-
-
-  //Aqua Line
-
-  aqua = require("./lines/aqua.json");
-
-  for (var i = 0; i < aqua.length; i++) {
-    aqualine[i] = aqua[i]["Hindi"];
-  }
-
-  for (var i = 0; i < aqualine.length; i++) {
-    g.addNode(aqualine[i]);
-  }
-
-  for (var i = 0; i < (aqualine.length - 1); i++) {
-    g.addEdge(aqualine[i], aqualine[i + 1], 2.86, "aqua");
-  }
-
-
-
-  //Grey Line
-
-  grey = require("./lines/grey.json");
-
-  for (var i = 0; i < grey.length; i++) {
-    greyline[i] = grey[i]["2"];
-  }
-
-
-  for (var i = 0; i < greyline.length; i++) {
-    if (greyline[i] == 'Dwarka')
-      continue;
-    else
-    g.addNode(greyline[i]);
-  }
-
-  for (var i = 0; i < (greyline.length - 1); i++) {
-    g.addEdge(greyline[i], greyline[i + 1], 2.10, "grey");
-  }
-
-  //rapid
-  rapid = require("./lines/rapid.json");
-
-  for (var i = 0; i < rapid.length; i++) {
-    rapidline[i] = rapid[i]["Hindi"];
-  }
-  for (var i = 0; i < rapidline.length; i++) {
-    if (rapidline[i] == 'Sikandarpur')
-      continue;
-    else
-      g.addNode(rapidline[i]);
-  }
-  for (var i = 0; i < (rapidline.length - 1); i++) {
-    g.addEdge(rapidline[i], rapidline[i + 1], 5.2, "rapid");
-  }
-
-  
   //Dhaula Kuan - South Campus Connection
   g.addEdge("Dhaula Kuan", "Durgabai Deshmukh South Campus", 18, "1.2km Skywalk");
 
-  //Noida Sec 52 - Noida Sec 51
-  g.addEdge("Noida Sector 52", "Noida Sector 51", 12, "300m Walkway/Free e-Rickshaw");
-
-
 }
 
-
-//Create new graph
-let g = new Graph();
-//Import lines
 importlines();
 
 
-//Firebase function exporter
-exports.get = functions.https.onRequest((req, res) => {
-  let to = req.query.to
-  let from = req.query.from
-  result = g.shortestRoute(from, to);
+app.get('/route',(req,res)=>{
+  let to= req.query.to
+  let from=  req.query.from
+  result=g.shortestRoute(from,to);
+  console.log(result)
   res.send(result)
 })
-
-
-
 
 //ShortestRouteCall
 //console.log(g.shortestRoute("Palam", "Model Town").interchange);
 
 //AdjList of Station
 //g.printGraph("Rajouri Garden");
+
+
+
+//NOTE
+//
+//TRY LISTING IGNORE INTERCHANGE STATION IN ADD NODE ONLY
+//
 
 //Order of Lining:
 //Blue
@@ -640,6 +483,3 @@ exports.get = functions.https.onRequest((req, res) => {
 //Green Branch
 //Pink
 //Pink Branch
-//Orange
-//Aqua
-//Grey
