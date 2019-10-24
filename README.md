@@ -12,8 +12,7 @@ Dijkstra's algorithm is used to find the route with the least time between two s
 Changes of the Metro Line parameters are used to calculate interchanges and include the interchange time.
 
 ## Hierarchy
-functions/index.js contains the code importing the lines with stations.
-The folder functions/lines contains the json files of the stations of all metro lines.
+functions/functions/route.js contains the code importing the lines with stations and calculating the shortest route. The folder functions/functions/lines contains the json files of the stations of all metro lines.
 
 ## Lines Implemented
 The following lines have been implemented (in order):</br>
