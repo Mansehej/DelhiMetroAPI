@@ -5,14 +5,17 @@ A Javascript based API for calculating the shortest path between two metro stati
 Data about stations per line is downloaded from Wikipedia tables (https://en.wikipedia.org/wiki/Red_Line_(Delhi_Metro)), etc. for each line.
 
 ## Working
-The metro lines are implemented in a Graph data structure in Javascript. Each station is considered as a node and time between stations are alloted as the weights between two nodes.
-Dijkstra's algorithm is used to find the route with the least time between two stations.
+The metro lines are implemented in a Graph Data Structure in Javascript. 
+Each station is considered as a node and time between stations is alloted as the weights between two nodes. 
+An additional parameter "Metro line" is given to each edge. 
+Dijkstra's algorithm is used to find the route with the least time between two stations. 
+Changes of the Metro Line parameters are used to calculate interchanges and include the interchange time.
 
 ## Hierarchy
 functions/index.js contains the code importing the lines with stations.
 The folder functions/lines contains the json files of the stations of all metro lines.
 
-## Current Progress
+## Lines Implemented
 The following lines have been implemented (in order):</br>
   ->Blue</br>
   ->Blue Branch</br>
@@ -27,7 +30,7 @@ The following lines have been implemented (in order):</br>
   ->Orange (Airport Express Line)</br>
   ->Aqua </br>
   ->Grey</br>
-  
+  ->Rapid Metro</br>
 ## Features
   ->Get shortest complete path from Source Station to Destination Station</br>
   ->Get list of Interchange Stations in order</br>
