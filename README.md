@@ -12,7 +12,7 @@ Dijkstra's algorithm is used to find the route with the least time between two s
 functions/index.js contains the code importing the lines with stations.
 The folder functions/lines contains the json files of the stations of all metro lines.
 
-## Current Progress
+## Lines Implemented
 The following lines have been implemented (in order):</br>
   ->Blue</br>
   ->Blue Branch</br>
@@ -27,7 +27,7 @@ The following lines have been implemented (in order):</br>
   ->Orange (Airport Express Line)</br>
   ->Aqua </br>
   ->Grey</br>
-  
+  ->Rapid Metro</br>
 ## Features
   ->Get shortest complete path from Source Station to Destination Station</br>
   ->Get list of Interchange Stations in order</br>
