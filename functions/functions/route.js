@@ -50,6 +50,10 @@ class Graph {
     this.adjacencyList[node2].push({ node: node1, weight: weight, line: color });
   }
 
+  addEdgeSingle(node1, node2, weight, color) {
+    this.adjacencyList[node1].push({ node: node2, weight: weight, line: color });
+  }
+
   //Djikstra
   shortestRoute(startNode, endNode) {
     console.log("--Directions from " + startNode + " to " + endNode + "--\n");
@@ -204,6 +208,10 @@ function lineChoose(linein) {
     line = aqualine;
   else if (linein == 'grey')
     line = greyline;
+  else if (linein == 'rapid')
+    line = rapidline
+  else if (linein == 'rapidloop')
+    line = rapidloopline
   else
     line = 0;
   return line;
@@ -335,6 +343,7 @@ var orangeline = [];
 var aqualine = [];
 var greyline = [];
 var rapidline = [];
+var rapidloopline = [];
 
 //Imports station details from JSON to line arrays
 function importlines() {
@@ -595,6 +604,21 @@ function importlines() {
     g.addEdge(rapidline[i], rapidline[i + 1], 5.2, "rapid");
   }
 
+  //rapidloop
+  rapidloop = require("./lines/rapidloop.json");
+  for (var i = 0; i < rapidloop.length; i++) {
+    rapidloopline[i] = rapidloop[i]["Hindi"];
+  }
+  for (var i = 0; i < rapidloopline.length; i++) {
+    if (rapidloopline[i] == 'Sikandarpur')
+      continue;
+    else
+      g.addNode(rapidloopline[i]);
+  }
+  for (var i = 0; i < (rapidloopline.length - 1); i++) {
+    g.addEdgeSingle(rapidloopline[i], rapidloopline[i + 1], 5.2, "rapidloop");
+  }
+
   
   //Dhaula Kuan - South Campus Connection
   g.addEdge("Dhaula Kuan", "Durgabai Deshmukh South Campus", 18, "1.2km Skywalk");
@@ -603,7 +627,9 @@ function importlines() {
   g.addEdge("Noida Sector 52", "Noida Sector 51", 12, "300m Walkway/Free e-Rickshaw");
 
   //Aqua Line Looper
-  g.addEdge("Phase 2", "Vodafone Belvedere Towers", 5.2, "rapid");
+  g.addEdgeSingle("Phase 2", "Vodafone Belvedere Towers", 5.2, "rapid");
+  g.addEdgeSingle("Phase 3", "Phase 2", 5.2, "rapid");
+
 
 }
 
