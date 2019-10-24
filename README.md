@@ -5,7 +5,7 @@ A Javascript based API for calculating the shortest path between two metro stati
 Data about stations per line is downloaded from Wikipedia tables (https://en.wikipedia.org/wiki/Red_Line_(Delhi_Metro)), etc. for each line.
 
 ## Working
-The metro lines are implemented in a Graph data structure in Javascript. 
+The metro lines are implemented in a Graph Data Structure in Javascript. 
 Each station is considered as a node and time between stations is alloted as the weights between two nodes. 
 An additional parameter "Metro line" is given to each edge. 
 Dijkstra's algorithm is used to find the route with the least time between two stations. 
