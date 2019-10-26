@@ -1,4 +1,4 @@
-# DelhiMetroAPI
+# Delhi Metro API
 A Javascript based API for calculating the shortest path between two metro stations.
 
 ## Data Sources
