@@ -172,11 +172,20 @@ class Graph {
 
   //Returns line between two adjacent stations
   getline(sta1, sta2) {
+    var a = this.adjacencyList[sta1]
+    var b = this.adjacencyList[sta2]
+    if( a == undefined || b == undefined)
+      return -2
     for (var i = 0; i < this.adjacencyList[sta1].length; i++) {
       if (this.adjacencyList[sta1][i].node == sta2)
-        return (this.adjacencyList[sta1][i].line);
+        return (this.adjacencyList[sta1][i].line)
     }
+    for (var j = 0; j < this.adjacencyList[sta2].length; j++) {
+      if (this.adjacencyList[sta2][j].node == sta1)
+        return (this.adjacencyList[sta2][j].line)
   }
+  return -1
+}
 }
 
 //Chooses station array based on input
@@ -211,7 +220,7 @@ function lineChoose(linein) {
   else if (linein == 'rapid')
     line = rapidline
   else if (linein == 'rapidloop')
-    line = rapidloopline
+    line = rapidline
   else
     line = 0;
   return line;
@@ -610,13 +619,13 @@ function importlines() {
     rapidloopline[i] = rapidloop[i]["Hindi"];
   }
   for (var i = 0; i < rapidloopline.length; i++) {
-    if (rapidloopline[i] == 'Sikandarpur')
-      continue;
-    else
       g.addNode(rapidloopline[i]);
   }
+
+
+
   for (var i = 0; i < (rapidloopline.length - 1); i++) {
-    g.addEdgeSingle(rapidloopline[i], rapidloopline[i + 1], 5.2, "rapidloop");
+    g.addEdgeSingle(rapidloopline[i], rapidloopline[i + 1], 5.2, "rapid");
   }
 
   
@@ -627,8 +636,9 @@ function importlines() {
   g.addEdge("Noida Sector 52", "Noida Sector 51", 12, "300m Walkway/Free e-Rickshaw");
 
   //Aqua Line Looper
-  g.addEdgeSingle("Phase 2", "Vodafone Belvedere Towers", 5.2, "rapid");
+
   g.addEdgeSingle("Phase 3", "Phase 2", 5.2, "rapid");
+  g.addEdgeSingle("Phase 2", "Vodafone Belvedere Towers", 5.2, "rapid");
 
 
 }
