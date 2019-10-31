@@ -16,20 +16,20 @@ functions/functions/route.js contains the code importing the lines with stations
 
 ## Lines Implemented
 The following lines have been implemented (in order):</br>
-  ->Blue</br>
-  ->Blue Branch</br>
-  ->Magenta</br>
-  ->Yellow</br>
-  ->Red</br>
-  ->Green</br>
-  ->Green Branch</br>
-  ->Violet</br>
-  ->Pink</br>
-  ->Pink Branch</br>
-  ->Orange (Airport Express Line)</br>
-  ->Aqua </br>
-  ->Grey</br>
-  ->Rapid Metro</br>
+  ->Blue : 2.02 minutes</br>
+  ->Blue Branch : 1.875 minutes</br>
+  ->Magenta : 2.36 minutes</br>
+  ->Yellow : 2.22 minutes</br>
+  ->Red : 2.03 minutes</br>
+  ->Green : 2.49 minutes</br>
+  ->Green Branch : 1.33 minutes</br>
+  ->Violet : 2.24 minutes</br>
+  ->Pink : 2.69 minutes</br>
+  ->Pink Branch : 2.43 minutes</br>
+  ->Orange (Airport Express Line) : 5.2 minutes</br>
+  ->Aqua : 2.86 minutes</br>
+  ->Grey : 2.10 minutes</br>
+  ->Rapid Metro : 5.2 minutes</br>
 ## Features
   ->Get shortest complete path from Source Station to Destination Station</br>
   ->Get list of Interchange Stations in order</br>
