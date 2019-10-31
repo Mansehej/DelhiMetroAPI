@@ -41,5 +41,5 @@ The following lines have been implemented (in order):</br>
   The API is hosted on Google Firebase, and can be called at:</br>
   https://us-central1-delhimetroapi.cloudfunctions.net/route-get
   with a GET query and parameters as from (source station) and to (destination station).</br>
-  For example, the API call for a route between Dwarka and Palam would be: https://us-central1-delhimetroapi.cloudfunctions.net/route-get?from=Dwarka&to=Palam.
+  For example, the API call for a route between Dwarka and Palam would be: https://us-central1-delhimetroapi.cloudfunctions.net/route-get?from=Dwarka&to=Palam.</br>
   The stations to be passed in the parameters must start with a capital letter. The stations must be passed as they are written in the /StationList.txt file.
