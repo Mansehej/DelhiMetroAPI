@@ -172,20 +172,11 @@ class Graph {
 
   //Returns line between two adjacent stations
   getline(sta1, sta2) {
-    var a = this.adjacencyList[sta1]
-    var b = this.adjacencyList[sta2]
-    if( a == undefined || b == undefined)
-      return -2
     for (var i = 0; i < this.adjacencyList[sta1].length; i++) {
       if (this.adjacencyList[sta1][i].node == sta2)
-        return (this.adjacencyList[sta1][i].line)
+        return (this.adjacencyList[sta1][i].line);
     }
-    for (var j = 0; j < this.adjacencyList[sta2].length; j++) {
-      if (this.adjacencyList[sta2][j].node == sta1)
-        return (this.adjacencyList[sta2][j].line)
   }
-  return -1
-}
 }
 
 //Chooses station array based on input
@@ -241,36 +232,6 @@ function getLast(path, interchange, line1, line2) {
   else if (linein == 'greenbranch' && interchange[0] == 'Ashok Park Main') {
     out.push('Brigadier Hoshiyar Singh');
   }
-  else if (linein == 'rapid') {
-    var startLoop=1
-    var endLoop=1
-    
-    for(var i=0; i<rapidline.length; i++){
-      if(rapidline[i]==path[0]) {
-        startLoop=0
-      }
-      if(rapidline[i]==path[path.length-1]) {
-        endLoop=0
-      }
-    }
-    console.log("S:" + startLoop + " E:" + endLoop)
-    if(startLoop==1) {
-      if(endLoop ==1) {
-        out.push(getLastCalcStart(rapidloopline, path, interchange));
-      }
-      else
-        out.push("Sector 55–56")
-    }
-
-    else if(startLoop==0 && endLoop ==1) {
-      out.push("Phase 3")
-    }
-    else {
-      line = lineChoose(linein)
-    out.push(getLastCalcStart(line, path, interchange));
-    }
-
-  }
 
   else {
     line = lineChoose(linein)
@@ -305,7 +266,6 @@ function getLastCalcStart(line, path, interchange) {
     else if (line[i] == interchange[0])
       endPos = i;
   }
-  console.log("start:" + startPos + " end:" + endPos + line)
   return comparePos(startPos, endPos, line)
 }
 
@@ -653,10 +613,8 @@ function importlines() {
       g.addNode(rapidloopline[i]);
   }
 
-
-
   for (var i = 0; i < (rapidloopline.length - 1); i++) {
-    g.addEdgeSingle(rapidloopline[i], rapidloopline[i + 1], 5.2, "rapid");
+    g.addEdgeSingle(rapidloopline[i], rapidloopline[i + 1], 5.2, "rapidloop");
   }
 
   
@@ -667,9 +625,8 @@ function importlines() {
   g.addEdge("Noida Sector 52", "Noida Sector 51", 12, "300m Walkway/Free e-Rickshaw");
 
   //Aqua Line Looper
-
-  g.addEdgeSingle("Phase 3", "Phase 2", 5.2, "rapid");
-  g.addEdgeSingle("Phase 2", "Vodafone Belvedere Towers", 5.2, "rapid");
+  g.addEdgeSingle("Phase 2", "Vodafone Belvedere Towers", 5.2, "rapidloop");
+  g.addEdgeSingle("Phase 3", "Phase 2", 5.2, "rapidloop");
 
 
 }
