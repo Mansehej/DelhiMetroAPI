@@ -305,7 +305,7 @@ function getLastCalcStart(line, path, interchange) {
     else if (line[i] == interchange[0])
       endPos = i;
   }
-  console.log("start:" + startPos + " end:" + endPos + line)
+  console.log("start:" + startPos + " end:" + endPos)
   return comparePos(startPos, endPos, line)
 }
 
@@ -398,7 +398,7 @@ function importlines() {
   blue = require("./lines/blue.json");
 
   for (var i = 0; i < blue.length; i++) {
-    blueline[i] = blue[i]["Hindi"];
+    blueline[i] = blue[i]["Hindi"].toLowerCase();
   }
 
   for (var i = 0; i < blueline.length; i++) {
@@ -416,11 +416,11 @@ function importlines() {
 
   for (var i = 0; i < bluebranch.length; i++) {
 
-    bluebranchline[i] = bluebranch[i]["Hindi"];
+    bluebranchline[i] = bluebranch[i]["Hindi"].toLowerCase();
   }
   for (var i = 0; i < bluebranchline.length; i++) {
     //Skip Interchange
-    if (bluebranchline[i] == 'Yamuna Bank')
+    if (bluebranchline[i] == 'yamuna bank')
       continue;
     else
       g.addNode(bluebranchline[i]);
@@ -434,13 +434,13 @@ function importlines() {
   magenta = require("./lines/magenta.json");
 
   for (var i = 0; i < magenta.length; i++) {
-    magentaline[i] = magenta[i]["25"];
+    magentaline[i] = magenta[i]["25"].toLowerCase();
   }
   for (var i = 0; i < magentaline.length; i++) {
     //Skip Interchange
-    if (magentaline[i] == 'Janakpuri West')
+    if (magentaline[i] == 'janakpuri west')
       continue;
-    if (magentaline[i] == 'Botanical Garden')
+    if (magentaline[i] == 'botanical garden')
       continue;
     else
       g.addNode(magentaline[i]);
@@ -453,10 +453,10 @@ function importlines() {
   yellow = require("./lines/yellow.json");
 
   for (var i = 0; i < yellow.length; i++) {
-    yellowline[i] = yellow[i]["Hindi"];
+    yellowline[i] = yellow[i]["Hindi"].toLowerCase();
   }
   for (var i = 0; i < yellowline.length; i++) {
-    if (yellowline[i] == 'Hauz Khas' || yellowline[i] == 'Rajiv Chowk')
+    if (yellowline[i] == 'hauz khas' || yellowline[i] == 'rajiv chowk')
       continue;
     else
       g.addNode(yellowline[i]);
@@ -471,10 +471,10 @@ function importlines() {
 
   for (var i = 0; i < violet.length; i++) {
 
-    violetline[i] = violet[i]["Hindi"];
+    violetline[i] = violet[i]["Hindi"].toLowerCase();
   }
   for (var i = 0; i < violetline.length; i++) {
-    if (violetline[i] == 'Kashmere Gate' || violetline[i] == 'Mandi House' || violetline[i] == 'Central Secretariat' || violetline[i] == 'Kalkaji Mandir')
+    if (violetline[i] == 'kashmere gate' || violetline[i] == 'mandi house' || violetline[i] == 'central secretariat' || violetline[i] == 'kalkaji mandir')
       continue;
     else
       g.addNode(violetline[i]);
@@ -490,10 +490,10 @@ function importlines() {
 
   for (var i = 0; i < red.length; i++) {
 
-    redline[i] = red[i]["Hindi"];
+    redline[i] = red[i]["Hindi"].toLowerCase();
   }
   for (var i = 0; i < redline.length; i++) {
-    if (redline[i] == 'Kashmere Gate')
+    if (redline[i] == 'kashmere gate')
       continue;
     else
       g.addNode(redline[i]);
@@ -508,10 +508,10 @@ function importlines() {
   green = require("./lines/green.json");
 
   for (var i = 0; i < green.length; i++) {
-    greenline[i] = green[i]["Hindi"];
+    greenline[i] = green[i]["Hindi"].toLowerCase();
   }
   for (var i = 0; i < greenline.length; i++) {
-    if (greenline[i] == 'Inderlok')
+    if (greenline[i] == 'inderlok')
       continue;
     else
       g.addNode(greenline[i]);
@@ -525,10 +525,10 @@ function importlines() {
   greenbranch = require("./lines/greenbranch.json");
 
   for (var i = 0; i < greenbranch.length; i++) {
-    greenbranchline[i] = greenbranch[i]["Hindi"];
+    greenbranchline[i] = greenbranch[i]["Hindi"].toLowerCase();
   }
   for (var i = 0; i < greenbranchline.length; i++) {
-    if (greenbranchline[i] == 'Kirti Nagar' || greenbranchline[i] == 'Ashok Park Main')
+    if (greenbranchline[i] == 'kirti nagar' || greenbranchline[i] == 'ashok park main')
       continue;
     else
       g.addNode(greenbranchline[i]);
@@ -541,10 +541,10 @@ function importlines() {
   pink = require("./lines/pink.json");
 
   for (var i = 0; i < pink.length; i++) {
-    pinkline[i] = pink[i]["Hindi"];
+    pinkline[i] = pink[i]["Hindi"].toLowerCase();
   }
   for (var i = 0; i < pinkline.length; i++) {
-    if (pinkline[i] == 'Azadpur' || pinkline[i] == 'Netaji Subhash Place' || pinkline[i] == 'Rajouri Garden' || pinkline[i] == 'INA' || pinkline[i] == 'Lajpat Nagar' || pinkline[i] == 'Mayur Vihar – I')
+    if (pinkline[i] == 'azadpur' || pinkline[i] == 'netaji subhash place' || pinkline[i] == 'rajouri garden' || pinkline[i] == 'ina' || pinkline[i] == 'lajpat nagar' || pinkline[i] == 'mayur vihar – i')
       continue;
     else
       g.addNode(pinkline[i]);
@@ -557,10 +557,10 @@ function importlines() {
   pinkbranch = require("./lines/pinkbranch.json");
 
   for (var i = 0; i < pinkbranch.length; i++) {
-    pinkbranchline[i] = pinkbranch[i]["Hindi"];
+    pinkbranchline[i] = pinkbranch[i]["Hindi"].toLowerCase();
   }
   for (var i = 0; i < pinkbranchline.length; i++) {
-    if (pinkbranchline[i] == 'Anand Vihar' || pinkbranchline[i] == 'Karkarduma' || pinkbranchline[i] == 'Welcome')
+    if (pinkbranchline[i] == 'anand vihar' || pinkbranchline[i] == 'karkarduma' || pinkbranchline[i] == 'welcome')
       continue;
     else
       g.addNode(pinkbranchline[i]);
@@ -573,10 +573,10 @@ function importlines() {
   orange = require("./lines/orange.json");
 
   for (var i = 0; i < orange.length; i++) {
-    orangeline[i] = orange[i]["Hindi"];
+    orangeline[i] = orange[i]["Hindi"].toLowerCase();
   }
   for (var i = 0; i < orangeline.length; i++) {
-    if (orangeline[i] == 'New Delhi' || orangeline[i] == 'Dwarka Sector 21')
+    if (orangeline[i] == 'new delhi' || orangeline[i] == 'dwarka sector 21')
       continue;
     else
       g.addNode(orangeline[i]);
@@ -595,7 +595,7 @@ function importlines() {
   aqua = require("./lines/aqua.json");
 
   for (var i = 0; i < aqua.length; i++) {
-    aqualine[i] = aqua[i]["Hindi"];
+    aqualine[i] = aqua[i]["Hindi"].toLowerCase();
   }
 
   for (var i = 0; i < aqualine.length; i++) {
@@ -613,12 +613,12 @@ function importlines() {
   grey = require("./lines/grey.json");
 
   for (var i = 0; i < grey.length; i++) {
-    greyline[i] = grey[i]["2"];
+    greyline[i] = grey[i]["2"].toLowerCase();
   }
 
 
   for (var i = 0; i < greyline.length; i++) {
-    if (greyline[i] == 'Dwarka')
+    if (greyline[i] == 'dwarka')
       continue;
     else
     g.addNode(greyline[i]);
@@ -632,10 +632,10 @@ function importlines() {
   rapid = require("./lines/rapid.json");
 
   for (var i = 0; i < rapid.length; i++) {
-    rapidline[i] = rapid[i]["Hindi"];
+    rapidline[i] = rapid[i]["Hindi"].toLowerCase();
   }
   for (var i = 0; i < rapidline.length; i++) {
-    if (rapidline[i] == 'Sikandarpur')
+    if (rapidline[i] == 'sikandarpur')
       continue;
     else
       g.addNode(rapidline[i]);
@@ -647,7 +647,7 @@ function importlines() {
   //rapidloop
   rapidloop = require("./lines/rapidloop.json");
   for (var i = 0; i < rapidloop.length; i++) {
-    rapidloopline[i] = rapidloop[i]["Hindi"];
+    rapidloopline[i] = rapidloop[i]["Hindi"].toLowerCase();
   }
   for (var i = 0; i < rapidloopline.length; i++) {
       g.addNode(rapidloopline[i]);
@@ -661,15 +661,15 @@ function importlines() {
 
   
   //Dhaula Kuan - South Campus Connection
-  g.addEdge("Dhaula Kuan", "Durgabai Deshmukh South Campus", 18, "1.2km Skywalk");
+  g.addEdge("dhaula kuan", "durgabai deshmukh south campus", 18, "1.2km Skywalk");
 
   //Noida Sec 52 - Noida Sec 51
-  g.addEdge("Noida Sector 52", "Noida Sector 51", 12, "300m Walkway/Free e-Rickshaw");
+  g.addEdge("noida sector 52", "noida sector 51", 12, "300m Walkway/Free e-Rickshaw");
 
   //Aqua Line Looper
 
-  g.addEdgeSingle("Phase 3", "Phase 2", 5.2, "rapid");
-  g.addEdgeSingle("Phase 2", "Vodafone Belvedere Towers", 5.2, "rapid");
+  g.addEdgeSingle("phase 3", "phase 2", 5.2, "rapid");
+  g.addEdgeSingle("phase 2", "vodafone belvedere towers", 5.2, "rapid");
 
 
 }
@@ -683,8 +683,8 @@ importlines();
 
 //Firebase function exporter
 exports.get = functions.https.onRequest((req, res) => {
-  let to = req.query.to
-  let from = req.query.from
+  let to = req.query.to.toLowerCase()
+  let from = req.query.from.toLowerCase()
   result = g.shortestRoute(from, to);
   res.send(result)
 })
