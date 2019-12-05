@@ -176,10 +176,9 @@ class Graph {
     result.lineEnds = getLast(result.path, result.interchange, result.line1, result.line2)
     console.log(result.time)
 
-    if(path.length != 0)
+    if(path.length != 1)
       result.status = 200
     return result;
-
   }
 
   printGraph(sta) {
