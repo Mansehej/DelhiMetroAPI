@@ -60,13 +60,28 @@ class Graph {
     let times = {};
     var change = [];
     let backtrace = {};
+    var foundS =0, foundD =0 ;
     let pq = new PriorityQueue();
     times[startNode] = 0;
     this.nodes.forEach(node => {
+      if(node==startNode) {
+        foundS=1
+      }
+      if(node==endNode) {
+        foundD =1
+      }
       if (node !== startNode) {
         times[node] = Infinity
       }
     });
+    if(foundS == 0 && foundD ==0)
+      return {'status' : 406}
+    else if(foundS == 0){
+      return {'status' : 4061}
+    }
+    else if(foundD == 0){
+      return {'status' : 4062}
+    }
     pq.enqueue([startNode, 0]);
     while (!pq.isEmpty()) {
       let shortestStep = pq.dequeue();
@@ -114,6 +129,7 @@ class Graph {
     //Class to send as result
     class all {
       constructor() {
+        this.status = 204;
         this.line1 = [];
         this.line2 = [];
         this.interchange = [];
@@ -123,7 +139,6 @@ class Graph {
       }
     }
     var result = new all();
-
     while (lastStep !== startNode) {
       if (this.getline(lastStep, backtrace[lastStep]) != this.getline(backtrace[lastStep], backtrace[backtrace[lastStep]]))
         if (backtrace[lastStep] == startNode)
@@ -160,6 +175,9 @@ class Graph {
       result.line1[0] = this.getline(result.path[0], result.path[1]);
     result.lineEnds = getLast(result.path, result.interchange, result.line1, result.line2)
     console.log(result.time)
+
+    if(path.length != 0)
+      result.status = 200
     return result;
 
   }
@@ -368,22 +386,30 @@ function comparePos(startPos, endPos, line) {
 }
 
 
-//Declare metro line arrays globally
-var blueline = [];
-var bluebranchline = [];
-var magentaline = [];
-var yellowline = [];
-var violetline = [];
-var redline = [];
-var greenline = [];
-var greenbranchline = [];
-var pinkline = [];
-var pinkbranchline = [];
-var orangeline = [];
-var aqualine = [];
-var greyline = [];
-var rapidline = [];
-var rapidloopline = [];
+var lines = [
+  "blue",
+  "bluebranch",
+  "magenta",
+  "yellow",
+  "violet",
+  "red",
+  "green",
+  "greenbranch",
+  "pink",
+  "pinkbranch",
+  "orange",
+  "aqua",
+  "grey",
+  "rapid",
+  "rapidloop"
+]
+
+for(var i = 0; i<lines.length; i++)
+{
+  eval("var "  + lines[i] + "line=[]")
+}
+
+
 
 //Imports station details from JSON to line arrays
 function importlines() {
@@ -394,6 +420,7 @@ function importlines() {
 
 
   //Blue Line
+
 
   blue = require("./lines/blue.json");
 
@@ -683,10 +710,16 @@ importlines();
 
 //Firebase function exporter
 exports.get = functions.https.onRequest((req, res) => {
+  if(req.query.to == undefined || req.query.from == undefined) {
+    res.send({'status' : '400'})
+    console.log("Invalid params")
+  }
+  else {
   let to = req.query.to.toLowerCase()
   let from = req.query.from.toLowerCase()
   result = g.shortestRoute(from, to);
   res.send(result)
+  }
 })
 
 

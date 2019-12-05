@@ -36,6 +36,16 @@ The following lines have been implemented (in order):</br>
   ->Get Metro Lines Changed</br>
   ->Get Total Travel Time</br>
   ->Get Final Station of Metro Line in direction of destination/next interchange</br>
+
+## Status Codes
+  Status codes are returned in the response in JSON format as 'status':statusCode. The value of different status codes are:</br>
+  Result succesfully generated: 200 </br>
+  Same source and destination: 204</br>
+  Undefined source or destination: 400</br>
+  Invalid source: 4061</br>
+  Invalid destination: 4062</br>
+  Invalid source and destination: 406</br>
+  <b>Please note that these status codes are returned in the JSON response and not as HTTP status codes</b>
  
  ## API Calling
   The API is hosted on Google Firebase, and can be called at:</br>
