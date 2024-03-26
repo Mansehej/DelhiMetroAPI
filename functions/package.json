@@ -16,6 +16,6 @@
     "request": "2.88.0",
     "firebase-admin": "^8.3.0",
     "firebase-functions": "^3.2.0",
-    "express": "4.17.1 "
+    "express": "4.19.2"
   }
 }
